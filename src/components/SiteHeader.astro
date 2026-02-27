@@ -1,0 +1,76 @@
+---
+const navItems = [
+    { label: 'Услуги', href: '#services' },
+    { label: 'Тарифы', href: '#comparison' },
+    { label: 'О нас', href: '#why-us' },
+    { label: 'Отзывы', href: '#testimonials' },
+    { label: 'Контакты', href: '#contact' }
+];
+---
+
+<header class="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+    <div class="container-main flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        <a href="/" class="flex items-center gap-2 no-underline">
+            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
+                <span class="text-lg font-bold text-primary-content">O</span>
+            </div>
+            <span class="text-2xl font-bold tracking-tight text-primary">OST</span>
+        </a>
+
+        <nav class="hidden items-center gap-1 md:flex" aria-label="Main navigation">
+            {navItems.map((item) => (
+                <a
+                    href={item.href}
+                    class="rounded-md px-3 py-2 text-sm font-medium text-card-foreground no-underline transition-colors hover:bg-muted hover:text-primary"
+                >
+                    {item.label}
+                </a>
+            ))}
+        </nav>
+
+        <div class="flex items-center gap-3">
+            <a href="#contact" class="btn-primary hidden sm:inline-flex">Получить консультацию</a>
+            <button
+                id="mobile-menu-btn"
+                class="flex h-10 w-10 items-center justify-center rounded-lg text-foreground transition-colors hover:bg-muted md:hidden"
+                aria-label="Open menu"
+                aria-expanded="false"
+            >
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden border-t border-border md:hidden">
+        <nav class="container-main flex flex-col gap-1 px-4 py-4" aria-label="Mobile navigation">
+            {navItems.map((item) => (
+                <a
+                    href={item.href}
+                    class="mobile-nav-link rounded-md px-3 py-2.5 text-sm font-medium text-card-foreground no-underline transition-colors hover:bg-muted hover:text-primary"
+                >
+                    {item.label}
+                </a>
+            ))}
+            <a href="#contact" class="btn-primary mt-2 text-center">Получить консультацию</a>
+        </nav>
+    </div>
+</header>
+
+<script>
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn?.addEventListener('click', () => {
+        const isOpen = !menu?.classList.contains('hidden');
+        menu?.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', String(!isOpen));
+    });
+    document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+        link.addEventListener('click', () => {
+            menu?.classList.add('hidden');
+            btn?.setAttribute('aria-expanded', 'false');
+        });
+    });
+</script>
