@@ -3,9 +3,10 @@
 @theme {
     --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-mono: 'JetBrains Mono Variable', ui-monospace, 'SFMono-Regular', Menlo, Monaco, Consolas, monospace;
 
     /* OST Brand Colors */
-    --color-primary: #1a3a6b;
+    --color-primary: #0f2b5b;
     --color-primary-light: #2563eb;
     --color-primary-content: #ffffff;
     --color-background: #ffffff;
@@ -18,6 +19,10 @@
     --color-accent: #2563eb;
     --color-accent-foreground: #ffffff;
     --color-section-alt: #f8fafc;
+    --color-hero-bg: #070e1b;
+    --color-success: #10b981;
+    --color-danger: #ef4444;
+    --color-cyan: #06b6d4;
 
     --radius-lg: 0.75rem;
     --radius-md: 0.5rem;
@@ -36,11 +41,11 @@
     }
 
     h1 {
-        @apply text-4xl font-bold tracking-tight text-primary sm:text-5xl lg:text-6xl;
+        @apply text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl;
     }
 
     h2 {
-        @apply text-3xl font-bold tracking-tight text-primary sm:text-4xl;
+        @apply text-3xl font-bold tracking-tight sm:text-4xl;
     }
 
     h3 {
@@ -50,11 +55,15 @@
 
 @layer components {
     .btn-primary {
-        @apply inline-flex items-center justify-center gap-2 rounded-lg bg-primary-light px-6 py-3 text-sm font-semibold text-primary-content transition-colors hover:bg-primary cursor-pointer;
+        @apply inline-flex items-center justify-center gap-2 rounded-lg bg-primary-light px-6 py-3 text-sm font-semibold text-primary-content no-underline transition-all duration-300 hover:bg-primary hover:shadow-lg hover:shadow-primary-light/25 hover:scale-105 active:scale-[0.98] cursor-pointer;
     }
 
     .btn-outline {
-        @apply inline-flex items-center justify-center gap-2 rounded-lg border-2 border-primary-light px-6 py-3 text-sm font-semibold text-primary-light transition-colors hover:bg-primary-light hover:text-primary-content cursor-pointer;
+        @apply inline-flex items-center justify-center gap-2 rounded-lg border-2 border-primary-content/30 px-6 py-3 text-sm font-semibold text-primary-content no-underline transition-all duration-300 hover:bg-primary-content/10 hover:scale-105 active:scale-[0.98] cursor-pointer;
+    }
+
+    .btn-outline-dark {
+        @apply inline-flex items-center justify-center gap-2 rounded-lg border-2 border-primary-light px-6 py-3 text-sm font-semibold text-primary-light no-underline transition-all duration-300 hover:bg-primary-light hover:text-primary-content hover:scale-105 hover:shadow-lg hover:shadow-primary-light/20 active:scale-[0.98] cursor-pointer;
     }
 
     .section-padding {
@@ -63,5 +72,18 @@
 
     .container-main {
         @apply mx-auto w-full max-w-7xl;
+    }
+
+    /* Animated gradient line under header */
+    .gradient-line {
+        height: 2px;
+        background: linear-gradient(90deg, var(--color-primary-light), var(--color-cyan), var(--color-primary-light));
+        background-size: 200% 100%;
+        animation: gradient-slide 3s linear infinite;
+    }
+
+    @keyframes gradient-slide {
+        0% { background-position: 0% 50%; }
+        100% { background-position: 200% 50%; }
     }
 }

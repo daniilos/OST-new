@@ -1,6 +1,7 @@
 ---
 import '../../src/styles/globals.css';
 import '@fontsource-variable/inter/wght.css';
+import '@fontsource-variable/jetbrains-mono/wght.css';
 import interWoff2 from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
 import TopBar from '../components/TopBar.astro';
 import SiteHeader from '../components/SiteHeader.astro';
@@ -11,11 +12,11 @@ interface Props {
     description?: string;
 }
 
-const { title, description = 'OST — IT-аутсорсинг и поддержка для малого и среднего бизнеса с 1995 года' } = Astro.props;
+const { title, description = 'OST -- IT-аутсорсинг та обслуговування комп\'ютерів у Києві з 1995 року. Заощаджуємо до 75% витрат на IT.' } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="ru" class="scroll-smooth">
+<html lang="uk" class="scroll-smooth">
     <head>
         <meta charset="UTF-8" />
         <title>{title}</title>

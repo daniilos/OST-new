@@ -2,64 +2,71 @@ import { X, Check } from 'lucide-react';
 
 const rows = [
     {
-        feature: 'Стоимость в месяц',
-        inHouse: 'от 50 000 грн (зарплата + налоги)',
-        outsource: 'от 12 000 грн (фиксированный тариф)'
+        feature: 'Вартість на місяць',
+        inHouse: 'від 40 000 грн (зарплата + податки + навчання)',
+        outsource: 'від 8 000 грн (фіксований тариф)'
     },
     {
-        feature: 'Доступность',
-        inHouse: 'Отпуска, больничные, увольнение',
-        outsource: '24/7 без перерывов и выходных'
+        feature: 'Доступність',
+        inHouse: 'Відпустки, лікарняні, звільнення',
+        outsource: 'Завжди на зв\'язку без перерв'
     },
     {
-        feature: 'Экспертиза',
-        inHouse: 'Один специалист — ограниченные знания',
-        outsource: 'Команда экспертов по всем направлениям'
+        feature: 'Експертиза',
+        inHouse: 'Одна людина \u2014 обмежені знання',
+        outsource: 'Команда 20+ експертів з усіх напрямків'
     },
     {
-        feature: 'Масштабируемость',
-        inHouse: 'Нужно нанимать дополнительных людей',
-        outsource: 'Гибко подключаем специалистов'
+        feature: 'Масштабованість',
+        inHouse: 'Потрібно наймати додаткових людей',
+        outsource: 'Гнучко підключаємо потрібних фахівців'
     },
     {
-        feature: 'Ответственность',
-        inHouse: 'Нет финансовых гарантий',
-        outsource: 'SLA с финансовой ответственностью'
+        feature: 'Відповідальність',
+        inHouse: 'Немає фінансових гарантій',
+        outsource: 'SLA з фінансовою відповідальністю'
     },
     {
-        feature: 'Актуальность знаний',
-        inHouse: 'Требует обучения за ваш счёт',
-        outsource: 'Постоянное повышение квалификации'
+        feature: 'Робоче місце',
+        inHouse: 'Потрібен стіл в офісі + обладнання',
+        outsource: 'Не потребує місця у вашому офісі'
     }
 ];
 
 export default function ComparisonTable() {
     return (
-        <section id="comparison" className="section-padding bg-background">
+        <section id="comparison" className="section-padding bg-section-alt">
             <div className="container-main">
-                <div className="mb-12 text-center">
-                    <h2 className="mb-4 text-balance">Свой сисадмин vs IT-аутсорсинг OST</h2>
+                <div className="mb-4 text-center">
+                    <span className="mb-3 inline-block rounded-full bg-primary-light/10 px-4 py-1.5 text-sm font-semibold text-primary-light">
+                        Порівняння
+                    </span>
+                    <h2 className="mb-4 text-balance text-primary">Штатний сисадмін vs IT-аутсорсинг OST</h2>
                     <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-                        Сравните затраты и возможности штатного специалиста и команды профессионалов
+                        Порівняйте витрати та можливості штатного спеціаліста та команди професіоналів
                     </p>
                 </div>
 
-                <div className="overflow-x-auto">
-                    <table className="w-full min-w-[600px] border-collapse">
+                <div className="mt-12 overflow-x-auto rounded-2xl border border-border bg-card shadow-sm">
+                    <table className="w-full min-w-[640px] border-collapse">
                         <thead>
                             <tr>
-                                <th className="rounded-tl-xl bg-muted px-6 py-4 text-left text-sm font-semibold text-card-foreground">
-                                    Критерий
+                                <th className="border-b border-border px-6 py-5 text-left text-sm font-semibold text-card-foreground">
+                                    Критерій
                                 </th>
-                                <th className="bg-muted px-6 py-4 text-left text-sm font-semibold text-card-foreground">
+                                <th className="border-b border-border bg-danger/5 px-6 py-5 text-left text-sm font-semibold text-card-foreground">
                                     <div className="flex items-center gap-2">
-                                        <X className="h-4 w-4 text-red-500" />
-                                        Штатный сисадмин
+                                        <div className="flex h-6 w-6 items-center justify-center rounded-full bg-danger/10">
+                                            <X className="h-3.5 w-3.5 text-danger" strokeWidth={3} />
+                                        </div>
+                                        Штатний сисадмін
                                     </div>
                                 </th>
-                                <th className="rounded-tr-xl bg-primary px-6 py-4 text-left text-sm font-semibold text-primary-content">
+                                <th className="border-b border-primary-light/20 bg-primary-light/5 px-6 py-5 text-left text-sm font-semibold text-primary">
                                     <div className="flex items-center gap-2">
-                                        <Check className="h-4 w-4" />
+                                        <div className="flex h-6 w-6 items-center justify-center rounded-full bg-success/10">
+                                            <Check className="h-3.5 w-3.5 text-success" strokeWidth={3} />
+                                        </div>
                                         IT-аутсорсинг OST
                                     </div>
                                 </th>
@@ -67,9 +74,9 @@ export default function ComparisonTable() {
                         </thead>
                         <tbody>
                             {rows.map((row, index) => (
-                                <tr key={row.feature} className={index % 2 === 0 ? 'bg-background' : 'bg-section-alt'}>
+                                <tr key={row.feature} className={`transition-colors duration-200 hover:bg-muted/50 ${index < rows.length - 1 ? 'border-b border-border' : ''}`}>
                                     <td className="px-6 py-4 text-sm font-medium text-card-foreground">{row.feature}</td>
-                                    <td className="px-6 py-4 text-sm text-muted-foreground">{row.inHouse}</td>
+                                    <td className="bg-danger/5 px-6 py-4 text-sm text-muted-foreground">{row.inHouse}</td>
                                     <td className="bg-primary-light/5 px-6 py-4 text-sm font-medium text-primary">
                                         {row.outsource}
                                     </td>

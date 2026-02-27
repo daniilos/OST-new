@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import HeroSection from '../components/HeroSection.astro';
-import StatsBar from '../components/StatsBar.astro';
+import StatsBar from '../components/StatsBar';
 import ServicesGrid from '../components/ServicesGrid';
 import WhyUs from '../components/WhyUs';
 import ComparisonTable from '../components/ComparisonTable';
@@ -9,9 +9,9 @@ import Testimonials from '../components/Testimonials';
 import ContactForm from '../components/ContactForm';
 ---
 
-<Layout title="OST — IT-аутсорсинг для вашего бизнеса">
+<Layout title="IT Аутсорсинг | Обслуговування комп'ютерів у Києві | OST">
     <HeroSection />
-    <StatsBar />
+    <StatsBar client:visible />
     <ServicesGrid client:visible />
     <WhyUs client:visible />
     <ComparisonTable client:visible />
