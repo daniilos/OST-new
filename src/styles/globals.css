@@ -1,78 +1,89 @@
 @import 'tailwindcss';
 
 @theme {
-    --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    --color-primary: #f67280;
-    --color-primary-content: #101828;
-    --color-complementary: #355c7d;
-    --background-image-noise: linear-gradient(
-            to bottom,
-            color-mix(in oklab, var(--color-gray-950) 0%, transparent),
-            color-mix(in oklab, var(--color-gray-950) 100%, transparent)
-        ),
-        url('/images/noise.png');
+    --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-mono: 'JetBrains Mono Variable', ui-monospace, 'SFMono-Regular', Menlo, Monaco, Consolas, monospace;
+
+    /* OST Brand Colors */
+    --color-primary: #0f2b5b;
+    --color-primary-light: #2563eb;
+    --color-primary-content: #ffffff;
+    --color-background: #ffffff;
+    --color-foreground: #0f172a;
+    --color-muted: #f1f5f9;
+    --color-muted-foreground: #64748b;
+    --color-border: #e2e8f0;
+    --color-card: #ffffff;
+    --color-card-foreground: #1e293b;
+    --color-accent: #2563eb;
+    --color-accent-foreground: #ffffff;
+    --color-section-alt: #f8fafc;
+    --color-hero-bg: #070e1b;
+    --color-success: #10b981;
+    --color-danger: #ef4444;
+    --color-cyan: #06b6d4;
+
+    --radius-lg: 0.75rem;
+    --radius-md: 0.5rem;
 }
 
 @layer base {
+    *,
+    *::before,
+    *::after {
+        border-color: var(--color-border);
+    }
+
+    body {
+        color: var(--color-foreground);
+        background-color: var(--color-background);
+    }
+
     h1 {
-        @apply text-4xl font-bold tracking-tight sm:text-5xl;
+        @apply text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl;
     }
 
     h2 {
-        @apply text-2xl font-bold sm:text-3xl;
+        @apply text-3xl font-bold tracking-tight sm:text-4xl;
     }
 
-    a:not(.btn) {
-        @apply underline transition hover:opacity-80;
-    }
-
-    pre {
-        @apply p-6 overflow-x-auto rounded-lg;
-    }
-
-    :not(pre) > code {
-        @apply px-1 py-0.5 font-mono rounded bg-gray-900 text-primary;
-        font-size: 0.9em;
+    h3 {
+        @apply text-xl font-semibold text-card-foreground;
     }
 }
 
 @layer components {
-    .markdown {
-        > * {
-            @apply my-6;
-        }
-
-        :where(h1, h2) {
-            @apply mt-12 mb-6;
-        }
-
-        > :first-child {
-            @apply mt-0;
-        }
-
-        > :last-child {
-            @apply mb-0;
-        }
+    .btn-primary {
+        @apply inline-flex items-center justify-center gap-2 rounded-lg bg-primary-light px-6 py-3 text-sm font-semibold text-primary-content no-underline transition-all duration-300 hover:bg-primary hover:shadow-lg hover:shadow-primary-light/25 hover:scale-105 active:scale-[0.98] cursor-pointer;
     }
 
-    .btn {
-        @apply inline-flex items-center justify-center gap-2 bg-primary text-primary-content cursor-pointer text-center font-semibold no-underline transition-colors;
-        padding: var(--btn-py, 0.875rem) var(--btn-px, 1.25rem);
-        font-size: var(--btn-font-size, 0.875rem);
-        border-radius: var(--btn-border-radius, 0.25rem);
-
-        &:hover {
-            @apply bg-primary/85;
-        }
-
-        &:disabled {
-            @apply text-gray-400 bg-gray-700;
-        }
+    .btn-outline {
+        @apply inline-flex items-center justify-center gap-2 rounded-lg border-2 border-primary-content/30 px-6 py-3 text-sm font-semibold text-primary-content no-underline transition-all duration-300 hover:bg-primary-content/10 hover:scale-105 active:scale-[0.98] cursor-pointer;
     }
 
-    .btn-lg {
-        --btn-font-size: 1.125rem;
-        --btn-px: 1.5rem;
-        --btn-py: 1.125rem;
+    .btn-outline-dark {
+        @apply inline-flex items-center justify-center gap-2 rounded-lg border-2 border-primary-light px-6 py-3 text-sm font-semibold text-primary-light no-underline transition-all duration-300 hover:bg-primary-light hover:text-primary-content hover:scale-105 hover:shadow-lg hover:shadow-primary-light/20 active:scale-[0.98] cursor-pointer;
+    }
+
+    .section-padding {
+        @apply px-4 py-16 sm:px-6 md:py-24 lg:px-8;
+    }
+
+    .container-main {
+        @apply mx-auto w-full max-w-7xl;
+    }
+
+    /* Animated gradient line under header */
+    .gradient-line {
+        height: 2px;
+        background: linear-gradient(90deg, var(--color-primary-light), var(--color-cyan), var(--color-primary-light));
+        background-size: 200% 100%;
+        animation: gradient-slide 3s linear infinite;
+    }
+
+    @keyframes gradient-slide {
+        0% { background-position: 0% 50%; }
+        100% { background-position: 200% 50%; }
     }
 }
