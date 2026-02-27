@@ -11,10 +11,22 @@ import ContactForm from '../components/ContactForm';
 
 <Layout title="IT-аутсорсинг для бизнеса в Киеве | OST">
     <HeroSection />
-    <ServicesGrid client:visible />
-    <StatsBar client:visible />
-    <WhyUs client:visible />
-    <ComparisonTable client:visible />
-    <Testimonials client:visible />
-    <ContactForm client:visible />
+    <div class="scroll-reveal">
+        <ServicesGrid client:visible />
+    </div>
+    <div class="scroll-reveal">
+        <StatsBar client:visible />
+    </div>
+    <div class="scroll-reveal">
+        <WhyUs client:visible />
+    </div>
+    <div class="scroll-reveal">
+        <ComparisonTable client:visible />
+    </div>
+    <div class="scroll-reveal">
+        <Testimonials client:visible />
+    </div>
+    <div class="scroll-reveal">
+        <ContactForm client:visible />
+    </div>
 </Layout>

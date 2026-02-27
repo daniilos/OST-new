@@ -47,11 +47,16 @@ export default function ServicesGrid() {
                     {services.map((service) => {
                         const Icon = service.icon;
                         return (
-                            <div key={service.title} className="service-card border border-[#dbe5ff] bg-white shadow-blue-100/80">
-                                <div className="mb-7">
-                                    <Icon className="h-16 w-16 text-[#2563eb]" strokeWidth={1.6} />
+                            <div key={service.title} className="service-card group">
+                                <div className="mb-6">
+                                    <Icon
+                                        className="h-16 w-16 text-[#2563eb] transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3"
+                                        strokeWidth={1.6}
+                                    />
                                 </div>
-                                <h3 className="mb-3 text-[#1a3a6b]">{service.title}</h3>
+                                <h3 className="mb-3 transition-colors duration-300 group-hover:text-[#2563eb]">
+                                    {service.title}
+                                </h3>
                                 <p className="text-base text-muted-foreground">{service.description}</p>
                             </div>
                         );
