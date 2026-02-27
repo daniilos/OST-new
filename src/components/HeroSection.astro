@@ -2,72 +2,48 @@
 
 ---
 
-<section class="relative overflow-hidden bg-hero-bg py-20 md:py-28 lg:py-36">
-    <!-- Dot pattern background -->
-    <div class="absolute inset-0 opacity-[0.07]" style="background-image: radial-gradient(circle, #ffffff 1px, transparent 1px); background-size: 24px 24px;"></div>
-    <!-- Glow effects -->
-    <div class="absolute left-1/4 top-0 h-96 w-96 rounded-full bg-primary-light/10 blur-3xl"></div>
-    <div class="absolute bottom-0 right-1/4 h-72 w-72 rounded-full bg-cyan/5 blur-3xl"></div>
-
-    <div class="container-main relative z-10 px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col items-center gap-12 lg:flex-row lg:gap-16">
-            <!-- Left Content -->
-            <div class="flex-1 text-center lg:text-left">
-                <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-primary-light/20 bg-primary-light/10 px-4 py-1.5 text-sm font-medium text-primary-light">
-                    <span class="inline-block h-2 w-2 rounded-full bg-success animate-pulse"></span>
-                    30+ років на ринку IT
-                </div>
-                <h1 class="mb-6 text-balance text-primary-content">
-                    IT Аутсорсинг
-                    <span class="block text-primary-light">Ваше IT працюватиме на Вас</span>
+<section class="bg-white py-16 md:py-24">
+    <div class="container-main px-4 sm:px-6 lg:px-8">
+        <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+            <div class="text-center lg:text-left">
+                <p class="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[#2563eb]">OST IT-аутсорсинг</p>
+                <h1 class="text-balance">
+                    IT-аутсорсинг для бизнеса в Киеве
+                    <span class="mt-2 block">Берём на себя всё IT — вы занимаетесь бизнесом</span>
                 </h1>
-                <p class="mx-auto mb-8 max-w-xl text-lg leading-relaxed text-primary-content/70 lg:mx-0">
-                    Передайте IT-відділ та обслуговування комп'ютерної техніки, серверної та мережевої інфраструктури команді з 20+ фахівців. Забезпечимо максимальний захист даних, конфіденційність та безперебійну роботу вашого офісу &mdash; заощаджуючи до 75% витрат.
+                <p class="mx-auto mt-6 max-w-2xl text-lg text-slate-600 lg:mx-0">
+                    Передайте обслуживание инфраструктуры, рабочих станций и поддержку сотрудников опытной команде OST.
+                    Мы обеспечиваем стабильную работу IT и понятный сервис с прозрачными сроками.
                 </p>
-                <div class="flex flex-wrap items-center justify-center gap-4 lg:justify-start">
-                    <a href="#contact" class="btn-primary px-8 py-3.5 text-base shadow-lg shadow-primary-light/25">Замовити безкоштовний аудит</a>
-                    <a href="#services" class="btn-outline px-8 py-3.5 text-base">Наші послуги</a>
-                </div>
-
-                <!-- Trust badges -->
-                <div class="mt-10 flex flex-wrap items-center justify-center gap-6 lg:justify-start">
-                    <div class="flex items-center gap-2 text-sm text-primary-content/50">
-                        <svg class="h-5 w-5 text-success" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>
-                        Без прихованих платежів
-                    </div>
-                    <div class="flex items-center gap-2 text-sm text-primary-content/50">
-                        <svg class="h-5 w-5 text-success" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                        Реакція за 15 хвилин
-                    </div>
-                    <div class="flex items-center gap-2 text-sm text-primary-content/50">
-                        <svg class="h-5 w-5 text-success" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                        Гарантія SLA у договорі
-                    </div>
+                <div class="mt-10 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
+                    <a href="#contact" class="button-primary px-8 py-3.5 text-base">Получить консультацию</a>
+                    <a href="#services" class="button-outline px-8 py-3.5 text-base">Посмотреть услуги</a>
                 </div>
             </div>
 
-            <!-- Right: Feature cards -->
-            <div class="hidden flex-1 lg:flex lg:justify-end">
-                <div class="grid w-full max-w-md grid-cols-2 gap-4">
-                    <div class="group flex flex-col items-center justify-center rounded-2xl border border-primary-content/10 bg-primary-content/5 p-6 text-center backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:bg-primary-content/10 hover:shadow-lg hover:shadow-primary-light/10">
-                        <svg class="mb-3 h-10 w-10 text-primary-light transition-transform duration-300 group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25A2.25 2.25 0 015.25 3h13.5A2.25 2.25 0 0121 5.25z" /></svg>
-                        <span class="text-sm font-semibold text-primary-content">Комп'ютери</span>
-                        <span class="mt-1 text-xs text-primary-content/50">Повноцінна допомога</span>
-                    </div>
-                    <div class="group flex flex-col items-center justify-center rounded-2xl border border-primary-content/10 bg-primary-content/5 p-6 text-center backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:bg-primary-content/10 hover:shadow-lg hover:shadow-primary-light/10">
-                        <svg class="mb-3 h-10 w-10 text-primary-light transition-transform duration-300 group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008zm-3 6h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z" /></svg>
-                        <span class="text-sm font-semibold text-primary-content">Сервери</span>
-                        <span class="mt-1 text-xs text-primary-content/50">Моніторинг 24/7</span>
-                    </div>
-                    <div class="group flex flex-col items-center justify-center rounded-2xl border border-primary-content/10 bg-primary-content/5 p-6 text-center backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:bg-primary-content/10 hover:shadow-lg hover:shadow-primary-light/10">
-                        <svg class="mb-3 h-10 w-10 text-primary-light transition-transform duration-300 group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.288 15.038a5.25 5.25 0 017.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 011.06 0z" /></svg>
-                        <span class="text-sm font-semibold text-primary-content">Мережі</span>
-                        <span class="mt-1 text-xs text-primary-content/50">ЛОМ, СКС, Wi-Fi</span>
-                    </div>
-                    <div class="group flex flex-col items-center justify-center rounded-2xl border border-primary-content/10 bg-primary-content/5 p-6 text-center backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:bg-primary-content/10 hover:shadow-lg hover:shadow-primary-light/10">
-                        <svg class="mb-3 h-10 w-10 text-primary-light transition-transform duration-300 group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>
-                        <span class="text-sm font-semibold text-primary-content">Безпека</span>
-                        <span class="mt-1 text-xs text-primary-content/50">Захист даних</span>
+            <div class="mx-auto w-full max-w-xl">
+                <div class="rounded-3xl border border-[#dbe7ff] bg-[#eff4ff] p-6 shadow-[0_24px_60px_rgba(37,99,235,0.16)] sm:p-8">
+                    <div class="rounded-2xl border border-[#c8dafd] bg-white p-5 sm:p-6">
+                        <div class="mb-6 flex items-center justify-between">
+                            <div class="text-sm font-semibold text-[#1a3a6b]">OST Service Desk</div>
+                            <div class="rounded-full bg-[#eff4ff] px-3 py-1 text-xs font-medium text-[#2563eb]">SLA 24/7</div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="rounded-xl border border-[#dbe7ff] bg-[#f8fbff] p-4">
+                                <div class="text-sm font-semibold text-[#1a3a6b]">Инциденты и заявки</div>
+                                <div class="mt-2 h-2 w-3/4 rounded-full bg-[#bfdbfe]"></div>
+                            </div>
+                            <div class="grid gap-4 sm:grid-cols-2">
+                                <div class="rounded-xl border border-[#dbe7ff] bg-white p-4">
+                                    <div class="text-xs font-medium uppercase tracking-wider text-slate-500">Серверы</div>
+                                    <div class="mt-2 text-2xl font-bold text-[#1a3a6b]">99.9%</div>
+                                </div>
+                                <div class="rounded-xl border border-[#dbe7ff] bg-white p-4">
+                                    <div class="text-xs font-medium uppercase tracking-wider text-slate-500">Поддержка</div>
+                                    <div class="mt-2 text-2xl font-bold text-[#1a3a6b]">15 мин</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

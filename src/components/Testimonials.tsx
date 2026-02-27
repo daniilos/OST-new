@@ -1,22 +1,20 @@
-import { Quote } from 'lucide-react';
-
 const testimonials = [
     {
-        quote: 'Перейшли на обслуговування в OST три роки тому. За цей час жодного серйозного простою. Хлопці реагують миттєво і вирішують проблеми до того, як ми їх помічаємо.',
-        name: 'Андрій Коваленко',
-        company: 'ТОВ "ТехноТрейд"',
-        role: 'Генеральний директор'
+        quote: 'С OST мы закрыли все вопросы по инфраструктуре и больше не теряем время на повторяющиеся технические проблемы.',
+        name: 'Андрей Коваленко',
+        company: 'ООО "ТехноТрейд"',
+        role: 'Генеральный директор'
     },
     {
-        quote: 'Економія порівняно зі штатним сисадміном \u2014 близько 40%. При цьому рівень підтримки значно виріс. Особливо цінуємо цілодобову доступність та проактивний моніторинг.',
+        quote: 'Скорость реакции поддержки стала заметно выше, а стоимость обслуживания оказалась ниже, чем содержание IT-штата.',
         name: 'Марина Петренко',
-        company: 'Юридична компанія "Правовест"',
-        role: 'Керуючий партнер'
+        company: 'Юридическая компания "Правовест"',
+        role: 'Управляющий партнёр'
     },
     {
-        quote: 'OST допомогли нам безболісно мігрувати всю інфраструктуру в хмару. Тепер наші 5 офісів працюють як єдине ціле. Рекомендую всім, хто цінує надійність.',
-        name: 'Дмитро Савченко',
-        company: 'Мережа клінік "Здоров\'я"',
+        quote: 'Переход на аутсорсинг прошёл спокойно: команда OST взяла на себя поддержку офисов и помогла стандартизировать процессы.',
+        name: 'Дмитрий Савченко',
+        company: 'Сеть клиник "Здоровье"',
         role: 'IT-директор'
     }
 ];
@@ -26,12 +24,12 @@ export default function Testimonials() {
         <section id="testimonials" className="section-padding bg-background">
             <div className="container-main">
                 <div className="mb-12 text-center">
-                    <span className="mb-3 inline-block rounded-full bg-primary-light/10 px-4 py-1.5 text-sm font-semibold text-primary-light">
-                        Відгуки
-                    </span>
-                    <h2 className="mb-4 text-balance text-primary">Що кажуть наші клієнти</h2>
-                    <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-                        Довіра понад 200 компаній \u2014 наша найкраща рекомендація
+                    <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-[#2563eb]">
+                        Отзывы
+                    </p>
+                    <h2 className="text-balance">Нам доверяют компании из разных отраслей</h2>
+                    <p className="mx-auto mt-4 max-w-3xl text-lg text-slate-600">
+                        Реальные отзывы о переходе на сервисную модель IT-поддержки OST.
                     </p>
                 </div>
 
@@ -39,16 +37,15 @@ export default function Testimonials() {
                     {testimonials.map((testimonial) => (
                         <div
                             key={testimonial.name}
-                            className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-primary-light/30"
+                            className="flex flex-col rounded-2xl border border-[#dbe7ff] bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
                         >
-                            <Quote className="mb-4 h-8 w-8 text-primary-light/30 transition-colors duration-300 group-hover:text-primary-light/60" />
-                            <blockquote className="mb-6 flex-1 text-sm leading-relaxed text-card-foreground">
-                                {testimonial.quote}
+                            <blockquote className="mb-6 flex-1 text-slate-700">
+                                «{testimonial.quote}»
                             </blockquote>
-                            <div className="border-t border-border pt-4">
-                                <div className="text-sm font-semibold text-card-foreground">{testimonial.name}</div>
-                                <div className="text-xs text-muted-foreground">{testimonial.role}</div>
-                                <div className="text-xs font-medium text-primary-light">{testimonial.company}</div>
+                            <div className="border-t border-[#dbe7ff] pt-4">
+                                <div className="text-sm font-semibold text-slate-900">{testimonial.name}</div>
+                                <div className="text-xs text-slate-500">{testimonial.role}</div>
+                                <div className="text-xs font-semibold text-[#1a3a6b]">{testimonial.company}</div>
                             </div>
                         </div>
                     ))}

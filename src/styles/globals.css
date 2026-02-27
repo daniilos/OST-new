@@ -5,27 +5,23 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
     --font-mono: 'JetBrains Mono Variable', ui-monospace, 'SFMono-Regular', Menlo, Monaco, Consolas, monospace;
 
-    /* OST Brand Colors */
-    --color-primary: #0f2b5b;
+    --color-primary: #1a3a6b;
     --color-primary-light: #2563eb;
     --color-primary-content: #ffffff;
     --color-background: #ffffff;
-    --color-foreground: #0f172a;
-    --color-muted: #f1f5f9;
+    --color-foreground: #334155;
+    --color-muted: #f8fbff;
     --color-muted-foreground: #64748b;
-    --color-border: #e2e8f0;
+    --color-border: #dbe7ff;
     --color-card: #ffffff;
     --color-card-foreground: #1e293b;
     --color-accent: #2563eb;
     --color-accent-foreground: #ffffff;
-    --color-section-alt: #f8fafc;
-    --color-hero-bg: #070e1b;
-    --color-success: #10b981;
-    --color-danger: #ef4444;
-    --color-cyan: #06b6d4;
+    --color-section-alt: #f8fbff;
+    --color-stats-bg: #eff4ff;
 
-    --radius-lg: 0.75rem;
-    --radius-md: 0.5rem;
+    --radius-lg: 1rem;
+    --radius-md: 0.75rem;
 }
 
 @layer base {
@@ -38,32 +34,37 @@
     body {
         color: var(--color-foreground);
         background-color: var(--color-background);
+        @apply font-sans antialiased leading-[1.7];
     }
 
     h1 {
-        @apply text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl;
+        @apply text-[40px] leading-[1.1] font-bold tracking-tight text-[#1a3a6b] md:text-[52px] xl:text-[64px];
     }
 
     h2 {
-        @apply text-3xl font-bold tracking-tight sm:text-4xl;
+        @apply text-[34px] leading-[1.15] font-bold tracking-tight text-[#1a3a6b] md:text-[42px] xl:text-[48px];
     }
 
     h3 {
-        @apply text-xl font-semibold text-card-foreground;
+        @apply text-[26px] leading-[1.2] font-bold text-[#1a3a6b] md:text-[32px];
+    }
+
+    p {
+        @apply text-base leading-[1.7];
     }
 }
 
 @layer components {
-    .btn-primary {
-        @apply inline-flex items-center justify-center gap-2 rounded-lg bg-primary-light px-6 py-3 text-sm font-semibold text-primary-content no-underline transition-all duration-300 hover:bg-primary hover:shadow-lg hover:shadow-primary-light/25 hover:scale-105 active:scale-[0.98] cursor-pointer;
+    .button-primary {
+        @apply inline-flex items-center justify-center rounded-xl bg-[#2563eb] px-6 py-3 text-sm font-semibold text-white no-underline hover:bg-[#1d4ed8] hover:scale-105 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer active:scale-[0.98];
     }
 
-    .btn-outline {
-        @apply inline-flex items-center justify-center gap-2 rounded-lg border-2 border-primary-content/30 px-6 py-3 text-sm font-semibold text-primary-content no-underline transition-all duration-300 hover:bg-primary-content/10 hover:scale-105 active:scale-[0.98] cursor-pointer;
+    .button-outline {
+        @apply inline-flex items-center justify-center rounded-xl border-2 border-[#2563eb] bg-white px-6 py-3 text-sm font-semibold text-[#2563eb] no-underline transition-all duration-300 hover:bg-[#eff4ff] hover:scale-105 cursor-pointer active:scale-[0.98];
     }
 
-    .btn-outline-dark {
-        @apply inline-flex items-center justify-center gap-2 rounded-lg border-2 border-primary-light px-6 py-3 text-sm font-semibold text-primary-light no-underline transition-all duration-300 hover:bg-primary-light hover:text-primary-content hover:scale-105 hover:shadow-lg hover:shadow-primary-light/20 active:scale-[0.98] cursor-pointer;
+    .service-card {
+        @apply rounded-2xl border border-transparent bg-white p-8 shadow-lg hover:-translate-y-2 hover:scale-[1.05] hover:border-l-4 hover:border-[#2563eb] hover:shadow-2xl transition-all duration-500 cursor-pointer;
     }
 
     .section-padding {
@@ -72,18 +73,5 @@
 
     .container-main {
         @apply mx-auto w-full max-w-7xl;
-    }
-
-    /* Animated gradient line under header */
-    .gradient-line {
-        height: 2px;
-        background: linear-gradient(90deg, var(--color-primary-light), var(--color-cyan), var(--color-primary-light));
-        background-size: 200% 100%;
-        animation: gradient-slide 3s linear infinite;
-    }
-
-    @keyframes gradient-slide {
-        0% { background-position: 0% 50%; }
-        100% { background-position: 200% 50%; }
     }
 }
