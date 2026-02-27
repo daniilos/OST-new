@@ -1,49 +1,33 @@
 ---
+const statsPreview = [
+    { value: '30+', label: 'лет' },
+    { value: '200+', label: 'клиентов' },
+    { value: '98%', label: 'в срок' },
+    { value: '24/7', label: 'поддержка' }
+];
 
 ---
 
-<section class="bg-[#ffffff] section-padding !pt-16 md:!pt-20 lg:!pt-24">
+<section class="section-padding !pt-24 !pb-16 md:!pt-28 md:!pb-20 lg:!pt-32">
     <div class="container-main">
-        <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-            <div class="text-center lg:text-left">
-                <p class="mb-4 inline-flex rounded-full border border-[#dbe5ff] bg-[#eff4ff] px-4 py-1.5 text-sm font-semibold text-[#2563eb]">
-                    OST IT-аутсорсинг
-                </p>
-                <h1 class="mb-6 text-balance text-[#1a3a6b]">
-                    IT-аутсорсинг для бизнеса в Киеве
-                    <span class="mt-3 block text-[#1a3a6b]">Берём на себя всё IT — вы занимаетесь бизнесом</span>
-                </h1>
-                <p class="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground lg:mx-0">
-                    Поддерживаем инфраструктуру, серверы, рабочие станции и безопасность вашей компании как полноценный внешний IT-отдел.
-                    Вы получаете стабильную работу IT без найма большого внутреннего штата.
-                </p>
-                <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
-                    <a href="#contact" class="button-primary px-8 py-3.5 text-base">Получить консультацию</a>
-                    <a href="#services" class="button-outline px-8 py-3.5 text-base">Смотреть услуги</a>
-                </div>
+        <div class="mx-auto max-w-5xl text-center">
+            <h1 class="text-balance text-[#1a3a6b]">IT-аутсорсинг для бизнеса</h1>
+            <p class="mx-auto mt-5 max-w-3xl text-[clamp(1.2rem,2.3vw,1.75rem)] font-medium leading-[1.4] text-[#1a3a6b]/90">
+                Берём на себя всё IT — 30+ лет опыта
+            </p>
+
+            <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+                <a href="#contact" class="button-primary px-10 py-4 text-lg">Получить консультацию</a>
+                <a href="#services" class="button-outline px-10 py-4 text-lg">Смотреть услуги</a>
             </div>
 
-            <div class="w-full">
-                <div class="mx-auto max-w-xl rounded-3xl border border-[#dbe5ff] bg-[#f7faff] p-6 shadow-xl shadow-blue-100/60 sm:p-8">
-                    <div class="rounded-2xl border border-[#d6e4ff] bg-white p-5 sm:p-6">
-                        <div class="mb-6 h-4 w-28 rounded-full bg-[#eff4ff]"></div>
-                        <div class="space-y-3">
-                            <div class="h-3 rounded-full bg-[#eff4ff]"></div>
-                            <div class="h-3 w-11/12 rounded-full bg-[#eff4ff]"></div>
-                            <div class="h-3 w-9/12 rounded-full bg-[#eff4ff]"></div>
-                        </div>
-                        <div class="mt-8 grid gap-4 sm:grid-cols-2">
-                            <div class="rounded-xl border border-[#dbe5ff] bg-[#eff4ff] p-4">
-                                <p class="text-sm font-semibold text-[#1a3a6b]">SLA контроль</p>
-                                <p class="text-sm text-muted-foreground">Гарантии сроков и качества сервиса</p>
-                            </div>
-                            <div class="rounded-xl border border-[#dbe5ff] bg-[#eff4ff] p-4">
-                                <p class="text-sm font-semibold text-[#1a3a6b]">24/7 мониторинг</p>
-                                <p class="text-sm text-muted-foreground">Реакция на инциденты без простоев</p>
-                            </div>
-                        </div>
+            <div class="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                {statsPreview.map((stat) => (
+                    <div class="rounded-2xl border border-[#dbe5ff] bg-[#eff4ff] px-5 py-6">
+                        <p class="font-mono text-4xl font-bold leading-none tracking-tight text-[#1a3a6b]">{stat.value}</p>
+                        <p class="mt-2 text-base font-semibold text-[#1a3a6b]">{stat.label}</p>
                     </div>
-                </div>
+                ))}
             </div>
         </div>
     </div>
