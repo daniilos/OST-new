@@ -86,16 +86,18 @@
     }
 }
 
-@keyframes hero-float {
-    0%,
-    100% {
-        transform: translateY(0);
+@keyframes hero-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
     }
-    50% {
-        transform: translateY(-4px);
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-.hero-float {
-    animation: hero-float 3s ease-in-out infinite;
+.hero-icon-card {
+    opacity: 0;
+    animation: hero-fade-in 0.5s ease-out forwards;
 }

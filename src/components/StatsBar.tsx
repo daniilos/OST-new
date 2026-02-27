@@ -1,7 +1,7 @@
 const stats = [
-    { value: '30+', label: 'лет' },
+    { value: '30+', label: 'лет на рынке' },
     { value: '200+', label: 'клиентов' },
-    { value: '98%', label: 'в срок' },
+    { value: '98%', label: 'задач в срок' },
     { value: '24/7', label: 'поддержка' }
 ];
 

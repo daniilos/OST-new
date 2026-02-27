@@ -1,24 +1,37 @@
 ---
-import FloatingIcons from './FloatingIcons';
+import HeroIcons from './HeroIcons';
 ---
 
 <section class="section-padding !pt-24 !pb-16 md:!pt-28 md:!pb-20 lg:!pt-32 bg-white">
     <div class="container-main">
-        <div class="grid grid-cols-1 lg:grid-cols-5 items-center gap-10 lg:gap-4">
+        <div class="grid grid-cols-1 lg:grid-cols-5 items-center gap-12 lg:gap-8">
             <div class="lg:col-span-3 text-center lg:text-left">
-                <h1 class="text-balance text-[#1a3a6b]">IT-аутсорсинг для бизнеса</h1>
-                <p class="mt-5 max-w-2xl text-[clamp(1.2rem,2.3vw,1.75rem)] font-medium leading-[1.4] text-[#1a3a6b]/90 mx-auto lg:mx-0">
-                    Берём на себя всё IT — 30+ лет опыта
+                <span
+                    class="inline-block rounded-full border border-[#2563eb]/20 bg-[#eff4ff] px-4 py-1.5 text-sm font-semibold text-[#2563eb]"
+                >
+                    С 1995 года на рынке IT
+                </span>
+
+                <h1 class="mt-6 text-balance text-[#1a3a6b]">
+                    IT-аутсорсинг для<br class="hidden sm:inline" /> вашего бизнеса
+                </h1>
+
+                <p
+                    class="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-[#475569] lg:mx-0"
+                >
+                    Берём на себя всё IT — вы занимаетесь бизнесом.
+                    Профессиональная поддержка и обслуживание
+                    IT-инфраструктуры для малого и среднего бизнеса.
                 </p>
 
-                <div class="mt-10 flex flex-col items-center lg:items-start justify-center gap-4 sm:flex-row">
-                    <a href="#contact" class="button-primary px-10 py-4 text-lg">Получить консультацию</a>
-                    <a href="#services" class="button-outline px-10 py-4 text-lg">Смотреть услуги</a>
+                <div class="mt-10 flex flex-col items-center lg:items-start gap-4 sm:flex-row">
+                    <a href="#contact" class="button-primary px-10 py-4 text-lg">Узнать стоимость</a>
+                    <a href="#services" class="button-outline px-10 py-4 text-lg">Наши услуги</a>
                 </div>
             </div>
 
             <div class="lg:col-span-2">
-                <FloatingIcons client:load />
+                <HeroIcons client:load />
             </div>
         </div>
     </div>
