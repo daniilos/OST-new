@@ -125,6 +125,18 @@
     transform: translateY(0);
 }
 
+/* Stats items staggered entrance */
+.stat-item {
+    opacity: 0;
+    transform: translateY(28px) scale(0.92);
+    transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.scroll-reveal.revealed .stat-item {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
 /* Founder section icons */
 @keyframes founder-float-y {
     0%,
@@ -184,5 +196,11 @@
     .founder-float-x,
     .founder-glow {
         animation: none;
+    }
+
+    .stat-item {
+        opacity: 1;
+        transform: none;
+        transition: none;
     }
 }
