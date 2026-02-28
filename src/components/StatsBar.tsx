@@ -1,8 +1,8 @@
 const stats = [
-    { value: '30', suffix: '+', label: 'лет на рынке' },
-    { value: '200', suffix: '+', label: 'клиентов' },
-    { value: '98', suffix: '%', label: 'задач в срок' },
-    { value: '24', suffix: '/7', label: 'поддержка' }
+    { value: '30', suffix: '+', label: 'років на ринку' },
+    { value: '200', suffix: '+', label: 'клієнтів' },
+    { value: '98', suffix: '%', label: 'завдань вчасно' },
+    { value: '24', suffix: '/7', label: 'підтримка' }
 ];
 
 export default function StatsBar() {
