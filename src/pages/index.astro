@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import HeroSection from '../components/HeroSection.astro';
 import StatsBar from '../components/StatsBar';
+import FounderSection from '../components/FounderSection.astro';
 import ServicesGrid from '../components/ServicesGrid';
 import WhyUs from '../components/WhyUs';
 import ComparisonTable from '../components/ComparisonTable';
@@ -12,10 +13,13 @@ import ContactForm from '../components/ContactForm';
 <Layout title="IT-аутсорсинг для бізнесу в Києві | OST">
     <HeroSection />
     <div class="scroll-reveal">
-        <ServicesGrid client:visible />
+        <StatsBar client:visible />
     </div>
     <div class="scroll-reveal">
-        <StatsBar client:visible />
+        <FounderSection />
+    </div>
+    <div class="scroll-reveal">
+        <ServicesGrid client:visible />
     </div>
     <div class="scroll-reveal">
         <WhyUs client:visible />
