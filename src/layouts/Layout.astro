@@ -2,7 +2,8 @@
 import '../../src/styles/globals.css';
 import '@fontsource-variable/inter/wght.css';
 import '@fontsource-variable/jetbrains-mono/wght.css';
-import interWoff2 from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
+import interWoff2Latin from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
+import interWoff2Cyrillic from '@fontsource-variable/inter/files/inter-cyrillic-wght-normal.woff2?url';
 import TopBar from '../components/TopBar.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
@@ -27,7 +28,8 @@ const htmlLang = lang === 'en' ? 'en' : 'uk';
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="generator" content={Astro.generator} />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="preload" as="font" type="font/woff2" href={interWoff2} crossorigin />
+        <link rel="preload" as="font" type="font/woff2" href={interWoff2Latin} crossorigin />
+        <link rel="preload" as="font" type="font/woff2" href={interWoff2Cyrillic} crossorigin />
         <link rel="alternate" hreflang="uk" href="/" />
         <link rel="alternate" hreflang="en" href="/en/" />
     </head>
@@ -80,6 +82,8 @@ const htmlLang = lang === 'en' ? 'en' : 'uk';
                 { threshold: 0.08 }
             );
             document.querySelectorAll('.scroll-reveal').forEach((el) => revealObserver.observe(el));
+
+            document.getElementById('contact-form')?.addEventListener('submit', (e) => e.preventDefault());
         </script>
     </body>
 </html>

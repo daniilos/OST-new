@@ -36,7 +36,7 @@ export default function ContactForm({ lang = 'uk' }: { lang?: Lang }) {
 
                         <form
                             className="flex flex-col gap-4 rounded-2xl border border-[#dbe5ff] bg-white p-6 shadow-lg shadow-blue-100/50 transition-shadow duration-300 hover:shadow-xl lg:col-span-3"
-                            onSubmit={(e) => e.preventDefault()}
+                            id="contact-form"
                             aria-label={lang === 'en' ? 'Contact form' : 'Контактна форма'}
                         >
                             <div className="grid gap-4 sm:grid-cols-2">
