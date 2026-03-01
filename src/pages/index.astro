@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import HeroSection from '../components/HeroSection.astro';
-import StatsBar from '../components/StatsBar';
+import StatsSection from '../components/StatsSection.astro';
 import FounderSection from '../components/FounderSection.astro';
 import ServicesGrid from '../components/ServicesGrid';
 import WhyUs from '../components/WhyUs';
@@ -13,7 +13,7 @@ import ContactForm from '../components/ContactForm';
 <Layout title="IT-аутсорсинг для бізнесу в Києві | OST">
     <HeroSection />
     <div class="scroll-reveal">
-        <StatsBar client:visible />
+        <StatsSection />
     </div>
     <div class="scroll-reveal">
         <FounderSection />
