@@ -12,7 +12,7 @@ export default function ContactForm() {
                 <div className="mb-12 text-center">
                     <h2 className="mb-4 text-balance text-[#1a3a6b]">Зв'яжіться з нами</h2>
                     <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-                        Залиште заявку, і ми повернемось із пропозицією під ваш бізнес.
+                        Залиште заявку, і ми повернемося із пропозицією під ваш бізнес.
                     </p>
                 </div>
 
@@ -92,7 +92,7 @@ export default function ContactForm() {
                                 Надіслати заявку
                             </button>
                             <p className="text-center text-sm text-muted-foreground">
-                                Натискаючи кнопку, ви погоджуєтесь з обробкою персональних даних.
+                                Натискаючи кнопку, ви погоджуєтеся з обробкою персональних даних.
                             </p>
                         </form>
                     </div>
