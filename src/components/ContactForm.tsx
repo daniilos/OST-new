@@ -39,8 +39,8 @@ export default function ContactForm() {
                         </div>
 
                         <form
+                            id="contact-form"
                             className="flex flex-col gap-4 rounded-2xl border border-[#dbe5ff] bg-white p-6 shadow-lg shadow-blue-100/50 transition-shadow duration-300 hover:shadow-xl lg:col-span-3"
-                            onSubmit={(e) => e.preventDefault()}
                             aria-label="Контактна форма"
                         >
                             <div className="grid gap-4 sm:grid-cols-2">
