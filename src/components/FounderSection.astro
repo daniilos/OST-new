@@ -1,0 +1,85 @@
+---
+import FounderIcons from './FounderIcons';
+---
+
+<section class="section-padding bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden">
+    <div class="container-main">
+        <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-16">
+            <div>
+                <span
+                    class="inline-block rounded-full border border-[#2563eb]/20 bg-white px-4 py-1.5 text-sm font-semibold text-[#2563eb] mb-6"
+                >
+                    Засновник OST
+                </span>
+
+                <div class="space-y-4 text-lg leading-relaxed text-[#475569]">
+                    <p>
+                        Компанія ОСТ заснована в 1995 році. Ми стояли біля витоків
+                        комп'ютерної індустрії України — збирали перші ПК 386DX40
+                        з жорсткими дисками на 40 МБ.
+                    </p>
+                    <p class="font-semibold text-[#1a3a6b]">
+                        Один з них досі працює в Інституті ядерної фізики.
+                    </p>
+                    <p>
+                        З 2002 року повністю перейшли на IT-аутсорсинг. Сьогодні
+                        працюємо з FreeBSD, Linux, Windows — підбираємо оптимальні
+                        рішення під ваш бізнес.
+                    </p>
+                    <p>
+                        З 2008 року впроваджуємо міжнародні стандарти якості.
+                        30+ років досвіду — для стабільності вашого IT.
+                    </p>
+                </div>
+
+                <blockquote
+                    class="mt-8 border-l-[8px] border-[#bfdbfe] bg-white/60 backdrop-blur-sm p-5 sm:p-6 md:p-8 rounded-2xl"
+                >
+                    <p class="italic text-lg text-[#1a3a6b] leading-relaxed">
+                        «30+ років ми створюємо IT-інфраструктуру, яка працює без збоїв.
+                        Наш досвід — це ваша стабільність.»
+                    </p>
+                    <footer class="mt-4">
+                        <span class="font-bold text-[#1a3a6b]">— Степан Орос</span><span class="text-[#475569]">, засновник ОСТ</span>
+                    </footer>
+                </blockquote>
+            </div>
+
+            <div class="flex justify-center lg:justify-end">
+                <div class="relative pt-4 pb-8 pl-8 sm:pl-16">
+                    <div class="relative rounded-3xl shadow-2xl overflow-hidden w-72 sm:w-80 md:w-96 aspect-[4/5] transition-transform duration-500 hover:scale-[1.02]">
+                        <img
+                            src="/images/stepan-newpc1.jpg"
+                            alt="Степан — засновник ОСТ, сьогодні"
+                            class="w-full h-full object-cover"
+                            loading="lazy"
+                        />
+                        <div class="absolute top-4 right-4 z-10 bg-white/90 backdrop-blur-md rounded-xl px-4 py-2.5 shadow-lg">
+                            <span class="block text-2xl font-bold leading-none text-[#1a3a6b]">30+</span>
+                            <span class="block text-sm font-semibold text-[#475569] mt-0.5">років</span>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent p-4 pt-10">
+                            <span class="text-white text-sm font-semibold tracking-wide">Сьогодні</span>
+                        </div>
+                    </div>
+
+                    <div class="absolute -bottom-2 -left-2 sm:left-0 z-20 transition-all duration-500 hover:scale-105 hover:-rotate-1">
+                        <div class="relative rounded-xl overflow-hidden shadow-2xl border-4 border-white w-36 sm:w-44 -rotate-6">
+                            <img
+                                src="/images/stepanold.jpg"
+                                alt="Степан з ПК 386DX40, 1994 рік"
+                                class="w-full aspect-[3/4] object-cover object-top"
+                                loading="lazy"
+                            />
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-2 pt-6">
+                                <span class="text-amber-300 text-xs font-bold tracking-wider font-mono">1994</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <FounderIcons client:load />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,33 +1,33 @@
 const rows = [
     {
-        feature: 'Стоимость в месяц',
-        inHouse: 'От 40 000 грн (зарплата, налоги, обучение)',
-        outsource: 'От 8 000 грн (фиксированный тариф)'
+        feature: 'Вартість на місяць',
+        inHouse: 'Від 40 000 грн (зарплата, податки, навчання)',
+        outsource: 'Від 8 000 грн (фіксований тариф)'
     },
     {
-        feature: 'Доступность',
-        inHouse: 'Отпуска, больничные, увольнение',
-        outsource: 'Постоянная поддержка по SLA'
+        feature: 'Доступність',
+        inHouse: 'Відпустки, лікарняні, звільнення',
+        outsource: 'Постійна підтримка за SLA'
     },
     {
-        feature: 'Экспертиза',
-        inHouse: 'Один специалист с ограниченным стеком',
-        outsource: 'Команда профильных инженеров'
+        feature: 'Експертиза',
+        inHouse: 'Один спеціаліст з обмеженим стеком',
+        outsource: 'Команда профільних інженерів'
     },
     {
-        feature: 'Масштабирование',
-        inHouse: 'Нужно расширять штат',
-        outsource: 'Подключаем нужные компетенции по задаче'
+        feature: 'Масштабування',
+        inHouse: 'Потрібно розширювати штат',
+        outsource: 'Підключаємо потрібні компетенції під завдання'
     },
     {
-        feature: 'Ответственность',
-        inHouse: 'Размытая зона ответственности',
-        outsource: 'Единый подрядчик и прозрачная отчетность'
+        feature: 'Відповідальність',
+        inHouse: 'Розмита зона відповідальності',
+        outsource: 'Єдиний підрядник та прозора звітність'
     },
     {
-        feature: 'Рабочее место',
-        inHouse: 'Нужны рабочее место и оборудование',
-        outsource: 'Не требует места в вашем офисе'
+        feature: 'Робоче місце',
+        inHouse: 'Потрібні робоче місце та обладнання',
+        outsource: 'Не потребує місця у вашому офісі'
     }
 ];
 
@@ -36,9 +36,9 @@ export default function ComparisonTable() {
         <section id="comparison" className="section-padding bg-section-alt">
             <div className="container-main">
                 <div className="mb-4 text-center">
-                    <h2 className="mb-4 text-balance text-[#1a3a6b]">Сравнение формата обслуживания</h2>
+                    <h2 className="mb-4 text-balance text-[#1a3a6b]">Порівняння формату обслуговування</h2>
                     <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
-                        Понимайте разницу между внутренним IT-специалистом и моделью IT-аутсорсинга OST.
+                        Розумійте різницю між внутрішнім IT-спеціалістом та моделлю IT-аутсорсингу OST.
                     </p>
                 </div>
 
@@ -47,10 +47,10 @@ export default function ComparisonTable() {
                         <thead>
                             <tr>
                                 <th className="border-b border-[#dbe5ff] px-6 py-5 text-left text-sm font-semibold text-card-foreground">
-                                    Критерий
+                                    Критерій
                                 </th>
                                 <th className="border-b border-[#dbe5ff] bg-[#f8fafc] px-6 py-5 text-left text-sm font-semibold text-card-foreground">
-                                    Штатный IT-специалист
+                                    Штатний IT-спеціаліст
                                 </th>
                                 <th className="border-b border-[#dbe5ff] bg-[#eff4ff] px-6 py-5 text-left text-sm font-semibold text-[#1a3a6b]">
                                     IT-аутсорсинг OST

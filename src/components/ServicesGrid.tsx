@@ -4,32 +4,32 @@ const services = [
     {
         icon: BriefcaseBusiness,
         title: 'IT-аутсорсинг',
-        description: 'Полный внешний IT-отдел для бизнеса: обслуживание инфраструктуры, контроль процессов и развитие вашей IT-среды.'
+        description: 'Повний зовнішній IT-відділ для бізнесу: обслуговування інфраструктури, контроль процесів та розвиток вашого IT-середовища.'
     },
     {
         icon: MonitorCog,
-        title: 'Обслуживание ПК',
-        description: 'Поддержка рабочих станций и периферии, обновления, диагностика, устранение сбоев и стандартизация рабочих мест.'
+        title: 'Обслуговування ПК',
+        description: 'Підтримка робочих станцій та периферії, оновлення, діагностика, усунення збоїв та стандартизація робочих місць.'
     },
     {
         icon: Server,
-        title: 'Серверы',
-        description: 'Администрирование серверов, резервное копирование, контроль доступов и поддержание высокой доступности бизнес-сервисов.'
+        title: 'Сервери',
+        description: 'Адміністрування серверів, резервне копіювання, контроль доступу та підтримка високої доступності бізнес-сервісів.'
     },
     {
         icon: Network,
-        title: 'Сети',
-        description: 'Проектирование и сопровождение офисных сетей, Wi-Fi и VPN. Стабильная связь между всеми вашими филиалами и отделами.'
+        title: 'Мережі',
+        description: 'Проєктування та супровід офісних мереж, Wi-Fi та VPN. Стабільний зв\'язок між усіма вашими філіями та відділами.'
     },
     {
         icon: ShieldCheck,
-        title: 'Кибербезопасность',
-        description: 'Аудит защищённости, внедрение политик безопасности, защита данных компании и сотрудников от актуальных угроз.'
+        title: 'Кібербезпека',
+        description: 'Аудит захищеності, впровадження політик безпеки, захист даних компанії та працівників від актуальних загроз.'
     },
     {
         icon: Headset,
-        title: 'Техподдержка',
-        description: 'Единая точка входа для всех обращений сотрудников. Быстрые реакции, прозрачные SLA и поддержка в рабочее и внерабочее время.'
+        title: 'Техпідтримка',
+        description: 'Єдина точка входу для всіх звернень працівників. Швидкі реакції, прозорі SLA та підтримка у робочий і позаробочий час.'
     }
 ];
 
@@ -38,20 +38,25 @@ export default function ServicesGrid() {
         <section id="services" className="section-padding bg-section-alt">
             <div className="container-main">
                 <div className="mb-4 text-center">
-                    <h2 className="mb-4 text-balance text-[#1a3a6b]">Услуги OST для бизнеса</h2>
+                    <h2 className="mb-4 text-balance text-[#1a3a6b]">Послуги OST для бізнесу</h2>
                     <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
-                        6 ключевых направлений IT-аутсорсинга для стабильной и безопасной работы вашего офиса.
+                        6 ключових напрямів IT-аутсорсингу для стабільної та безпечної роботи вашого офісу.
                     </p>
                 </div>
                 <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                     {services.map((service) => {
                         const Icon = service.icon;
                         return (
-                            <div key={service.title} className="service-card border border-[#dbe5ff] bg-white shadow-blue-100/80">
-                                <div className="mb-7">
-                                    <Icon className="h-16 w-16 text-[#2563eb]" strokeWidth={1.6} />
+                            <div key={service.title} className="service-card group">
+                                <div className="mb-6">
+                                    <Icon
+                                        className="h-16 w-16 text-[#2563eb] transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3"
+                                        strokeWidth={1.6}
+                                    />
                                 </div>
-                                <h3 className="mb-3 text-[#1a3a6b]">{service.title}</h3>
+                                <h3 className="mb-3 transition-colors duration-300 group-hover:text-[#2563eb]">
+                                    {service.title}
+                                </h3>
                                 <p className="text-base text-muted-foreground">{service.description}</p>
                             </div>
                         );

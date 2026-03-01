@@ -35,7 +35,7 @@
     }
 
     body {
-        @apply bg-background text-foreground font-sans antialiased leading-[1.7];
+        @apply bg-background text-foreground font-sans antialiased leading-[1.7] overflow-x-hidden;
     }
 
     h1 {
@@ -47,7 +47,7 @@
     }
 
     h3 {
-        @apply text-[clamp(1.6rem,4vw,2rem)] font-bold leading-[1.2] text-[#1a3a6b];
+        @apply text-xl font-semibold leading-[1.3] text-[#1a3a6b];
     }
 
     p {
@@ -59,22 +59,34 @@
     .button-primary,
     .btn-primary {
         @apply inline-flex items-center justify-center rounded-xl px-6 py-3 text-sm font-semibold text-white no-underline cursor-pointer;
-        @apply bg-[#2563eb] hover:bg-[#1d4ed8] hover:scale-105 shadow-lg hover:shadow-xl transition-all duration-300;
+        @apply bg-[#2563eb] hover:bg-[#1d4ed8] shadow-lg hover:shadow-xl;
+        @apply hover:-translate-y-0.5 active:scale-95;
+        @apply transition-all duration-300;
+        min-height: 44px;
     }
 
     .button-outline,
     .btn-outline,
     .btn-outline-dark {
         @apply inline-flex items-center justify-center rounded-xl border-2 border-[#2563eb] bg-white px-6 py-3 text-sm font-semibold text-[#2563eb] no-underline cursor-pointer;
-        @apply transition-all duration-300 hover:bg-[#2563eb] hover:text-white hover:scale-105 hover:shadow-lg;
+        @apply hover:bg-[#eff4ff] hover:shadow-md active:scale-95;
+        @apply transition-all duration-300;
+        min-height: 44px;
     }
 
     .service-card {
-        @apply bg-white p-8 rounded-2xl shadow-lg;
-        @apply hover:shadow-2xl hover:scale-[1.05] hover:-translate-y-2;
-        @apply hover:border-l-4 border-transparent hover:border-[#2563eb];
-        @apply transition-all duration-500 cursor-pointer;
-        box-shadow: 0 12px 30px -20px rgba(37, 99, 235, 0.65), 0 14px 34px -26px rgba(26, 58, 107, 0.9);
+        @apply bg-white p-5 sm:p-6 lg:p-8 rounded-2xl cursor-pointer;
+        @apply transition-all duration-500 ease-out;
+        border: 1px solid #dbe5ff;
+        border-left: 4px solid transparent;
+        box-shadow: 0 4px 24px -4px rgba(37, 99, 235, 0.08), 0 2px 8px -2px rgba(26, 58, 107, 0.06);
+    }
+
+    .service-card:hover {
+        @apply -translate-y-3 scale-[1.02];
+        box-shadow: 0 20px 40px -8px rgba(37, 99, 235, 0.15), 0 8px 16px -4px rgba(26, 58, 107, 0.1);
+        border-color: #bbd0ff;
+        border-left-color: #2563eb;
     }
 
     .section-padding {
@@ -83,5 +95,114 @@
 
     .container-main {
         @apply mx-auto w-full max-w-7xl;
+    }
+}
+
+/* Hero icon cards */
+@keyframes hero-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-icon-card {
+    opacity: 0;
+    animation: hero-fade-in 0.5s ease-out forwards;
+}
+
+/* Scroll reveal */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stats items staggered entrance */
+.stat-item {
+    opacity: 0;
+    transform: translateY(28px) scale(0.92);
+    transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.scroll-reveal.revealed .stat-item {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Founder section icons */
+@keyframes founder-float-y {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+@keyframes founder-float-x {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(4px);
+    }
+}
+
+@keyframes founder-glow {
+    0%,
+    100% {
+        filter: drop-shadow(0 0 0 transparent);
+    }
+    50% {
+        filter: drop-shadow(0 0 8px rgba(37, 99, 235, 0.35));
+    }
+}
+
+.founder-float-y {
+    animation: founder-float-y 3s ease-in-out infinite;
+}
+
+.founder-float-x {
+    animation: founder-float-x 4s ease-in-out infinite;
+}
+
+.founder-glow {
+    animation: founder-float-y 3.5s ease-in-out infinite, founder-glow 2.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scroll-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .hero-icon-card {
+        opacity: 1;
+        animation: none;
+    }
+
+    .founder-float-y,
+    .founder-float-x,
+    .founder-glow {
+        animation: none;
+    }
+
+    .stat-item {
+        opacity: 1;
+        transform: none;
+        transition: none;
     }
 }

@@ -1,33 +1,37 @@
 ---
-const statsPreview = [
-    { value: '30+', label: 'лет' },
-    { value: '200+', label: 'клиентов' },
-    { value: '98%', label: 'в срок' },
-    { value: '24/7', label: 'поддержка' }
-];
-
+import HeroIcons from './HeroIcons';
 ---
 
-<section class="section-padding !pt-24 !pb-16 md:!pt-28 md:!pb-20 lg:!pt-32">
+<section class="section-padding !pt-24 !pb-16 md:!pt-28 md:!pb-20 lg:!pt-32 bg-white">
     <div class="container-main">
-        <div class="mx-auto max-w-5xl text-center">
-            <h1 class="text-balance text-[#1a3a6b]">IT-аутсорсинг для бизнеса</h1>
-            <p class="mx-auto mt-5 max-w-3xl text-[clamp(1.2rem,2.3vw,1.75rem)] font-medium leading-[1.4] text-[#1a3a6b]/90">
-                Берём на себя всё IT — 30+ лет опыта
-            </p>
+        <div class="grid grid-cols-1 lg:grid-cols-5 items-center gap-12 lg:gap-8">
+            <div class="lg:col-span-3 text-center lg:text-left">
+                <span
+                    class="inline-block rounded-full border border-[#2563eb]/20 bg-[#eff4ff] px-4 py-1.5 text-sm font-semibold text-[#2563eb]"
+                >
+                    З 1995 року на ринку IT
+                </span>
 
-            <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-                <a href="#contact" class="button-primary px-10 py-4 text-lg">Получить консультацию</a>
-                <a href="#services" class="button-outline px-10 py-4 text-lg">Смотреть услуги</a>
+                <h1 class="mt-6 text-balance text-[#1a3a6b]">
+                    IT-аутсорсинг для<br class="hidden sm:inline" /> вашого бізнесу
+                </h1>
+
+                <p
+                    class="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-[#475569] lg:mx-0"
+                >
+                    Беремо на себе все IT — ви займаєтеся бізнесом.
+                    Професійна підтримка та обслуговування
+                    IT-інфраструктури для малого та середнього бізнесу.
+                </p>
+
+                <div class="mt-10 flex flex-col items-center lg:items-start gap-4 sm:flex-row">
+                    <a href="#contact" class="button-primary px-10 py-4 text-lg">Дізнатися вартість</a>
+                    <a href="#services" class="button-outline px-10 py-4 text-lg">Наші послуги</a>
+                </div>
             </div>
 
-            <div class="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                {statsPreview.map((stat) => (
-                    <div class="rounded-2xl border border-[#dbe5ff] bg-[#eff4ff] px-5 py-6">
-                        <p class="font-mono text-4xl font-bold leading-none tracking-tight text-[#1a3a6b]">{stat.value}</p>
-                        <p class="mt-2 text-base font-semibold text-[#1a3a6b]">{stat.label}</p>
-                    </div>
-                ))}
+            <div class="lg:col-span-2">
+                <HeroIcons client:load />
             </div>
         </div>
     </div>

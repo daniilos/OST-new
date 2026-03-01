@@ -1,22 +1,22 @@
 ---
 const navGroups = [
     {
-        title: 'Услуги',
+        title: 'Послуги',
         links: [
             { label: 'IT-аутсорсинг', href: '#services' },
-            { label: 'Обслуживание ПК', href: '#services' },
-            { label: 'Серверы', href: '#services' },
-            { label: 'Сети', href: '#services' },
-            { label: 'Кибербезопасность', href: '#services' }
+            { label: 'Обслуговування ПК', href: '#services' },
+            { label: 'Сервери', href: '#services' },
+            { label: 'Мережі', href: '#services' },
+            { label: 'Кібербезпека', href: '#services' }
         ]
     },
     {
-        title: 'Компания',
+        title: 'Компанія',
         links: [
-            { label: 'Почему OST', href: '#why-us' },
-            { label: 'Сравнение', href: '#comparison' },
-            { label: 'Отзывы', href: '#testimonials' },
-            { label: 'Контакты', href: '#contact' }
+            { label: 'Чому OST', href: '#why-us' },
+            { label: 'Порівняння', href: '#comparison' },
+            { label: 'Відгуки', href: '#testimonials' },
+            { label: 'Контакти', href: '#contact' }
         ]
     }
 ];
@@ -27,21 +27,21 @@ const navGroups = [
         <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             <div class="lg:col-span-2">
                 <a href="/" class="mb-4 inline-block no-underline">
-                    <span class="text-3xl font-extrabold tracking-tight text-white">OST</span>
+                    <img src="/images/ostnew1.png" alt="OST" class="h-9 w-auto brightness-0 invert" />
                 </a>
                 <p class="mt-3 max-w-sm text-sm leading-relaxed text-white/75">
-                    Корпоративный IT-аутсорсинг для малого и среднего бизнеса в Киеве:
-                    поддержка рабочих мест, серверов, сетей и информационной безопасности.
+                    Корпоративний IT-аутсорсинг для малого та середнього бізнесу в Києві:
+                    підтримка робочих місць, серверів, мереж та інформаційної безпеки.
                 </p>
             </div>
 
             {navGroups.map((group) => (
                 <div>
                     <h4 class="mb-4 text-sm font-semibold uppercase tracking-wider text-white/55">{group.title}</h4>
-                    <ul class="flex flex-col gap-2.5">
+                    <ul class="flex flex-col gap-1">
                         {group.links.map((link) => (
                             <li>
-                                <a href={link.href} class="inline-block text-sm text-white/75 no-underline transition-all duration-200 hover:translate-x-1 hover:text-white">
+                                <a href={link.href} class="inline-block py-1.5 text-sm text-white/75 no-underline transition-all duration-200 hover:translate-x-1 hover:text-white">
                                     {link.label}
                                 </a>
                             </li>
@@ -52,11 +52,11 @@ const navGroups = [
         </div>
 
         <div class="mt-10 flex flex-col items-center gap-2 border-t border-white/15 pt-6 sm:flex-row sm:justify-between">
-            <p class="text-xs text-white/55">
-                &copy; 1995-{new Date().getFullYear()} OST. IT-аутсорсинг для бизнеса в Киеве.
+            <p class="text-sm text-white/55">
+                &copy; 1995-{new Date().getFullYear()} OST. IT-аутсорсинг для бізнесу в Києві.
             </p>
-            <p class="text-xs text-white/45">
-                Корпоративная IT-поддержка под ключ.
+            <p class="text-sm text-white/45">
+                Корпоративна IT-підтримка під ключ.
             </p>
         </div>
     </div>

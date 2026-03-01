@@ -12,11 +12,11 @@ interface Props {
     description?: string;
 }
 
-const { title, description = 'OST — IT-аутсорсинг и обслуживание компьютерной инфраструктуры в Киеве с 1995 года.' } = Astro.props;
+const { title, description = 'OST — IT-аутсорсинг та обслуговування комп\'ютерної інфраструктури в Києві з 1995 року.' } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="ru" class="scroll-smooth">
+<html lang="uk" class="scroll-smooth">
     <head>
         <meta charset="UTF-8" />
         <title>{title}</title>
@@ -33,5 +33,48 @@ const { title, description = 'OST — IT-аутсорсинг и обслужи�
             <slot />
         </main>
         <SiteFooter />
+
+        <script>
+            let countStarted = false;
+
+            function startCountUp() {
+                if (countStarted) return;
+                countStarted = true;
+                const els = document.querySelectorAll<HTMLElement>('[data-count-target]');
+                els.forEach((el, i) => {
+                    const target = parseInt(el.dataset.countTarget || '0', 10);
+                    const duration = 2000;
+                    const delay = 400 + i * 150;
+                    el.textContent = '0';
+                    setTimeout(() => {
+                        let start: number;
+                        const step = (ts: number) => {
+                            if (!start) start = ts;
+                            const progress = Math.min((ts - start) / duration, 1);
+                            const eased = 1 - Math.pow(1 - progress, 3);
+                            el.textContent = String(Math.round(eased * target));
+                            if (progress < 1) requestAnimationFrame(step);
+                        };
+                        requestAnimationFrame(step);
+                    }, delay);
+                });
+            }
+
+            const revealObserver = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('revealed');
+                            if (entry.target.querySelector('[data-count-target]')) {
+                                startCountUp();
+                            }
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                },
+                { threshold: 0.08 }
+            );
+            document.querySelectorAll('.scroll-reveal').forEach((el) => revealObserver.observe(el));
+        </script>
     </body>
 </html>

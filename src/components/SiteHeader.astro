@@ -1,39 +1,36 @@
 ---
 const navItems = [
-    { label: 'Услуги', href: '#services' },
-    { label: 'Почему OST', href: '#why-us' },
-    { label: 'Сравнение', href: '#comparison' },
-    { label: 'Отзывы', href: '#testimonials' },
-    { label: 'Контакты', href: '#contact' }
+    { label: 'Послуги', href: '#services' },
+    { label: 'Чому OST', href: '#why-us' },
+    { label: 'Порівняння', href: '#comparison' },
+    { label: 'Відгуки', href: '#testimonials' },
+    { label: 'Контакти', href: '#contact' }
 ];
 ---
 
 <header class="sticky top-0 z-50 border-b border-border bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90">
-    <div class="container-main flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <a href="/" class="no-underline">
-            <span class="text-3xl font-extrabold tracking-tight text-[#1a3a6b]">OST</span>
+    <div class="container-main flex items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+        <a href="/" class="inline-block no-underline transition-all duration-300 hover:scale-105 hover:opacity-80">
+            <img src="/images/ostnew1.png" alt="OST" class="h-10 w-auto" />
         </a>
 
-        <nav class="hidden items-center gap-2 md:flex" aria-label="Main navigation">
+        <nav class="hidden items-center gap-1 lg:flex" aria-label="Main navigation">
             {navItems.map((item) => (
                 <a
                     href={item.href}
-                    class="rounded-lg px-3 py-2 text-sm font-medium text-card-foreground no-underline transition-colors hover:bg-[#eff4ff] hover:text-[#1a3a6b]"
+                    class="px-3 py-2 text-sm font-medium text-card-foreground no-underline transition-all duration-200 hover:text-[#2563eb] hover:underline hover:underline-offset-4 hover:decoration-[#2563eb]"
                 >
                     {item.label}
                 </a>
             ))}
         </nav>
 
-        <div class="flex items-center gap-3">
-            <a href="tel:+380442899541" class="hidden text-sm font-semibold text-[#1a3a6b] no-underline lg:inline">
-                +38 (044) 289 95 41
-            </a>
-            <a href="#contact" class="button-primary hidden sm:inline-flex">Бесплатная консультация</a>
+        <div class="flex items-center gap-4">
+            <a href="#contact" class="button-primary hidden sm:inline-flex">Безкоштовна консультація</a>
             <button
                 id="mobile-menu-btn"
-                class="flex h-10 w-10 items-center justify-center rounded-lg text-foreground transition-colors hover:bg-[#eff4ff] md:hidden"
-                aria-label="Открыть меню"
+                class="flex h-11 w-11 items-center justify-center rounded-lg text-foreground transition-all duration-200 hover:bg-[#eff4ff] hover:scale-110 lg:hidden"
+                aria-label="Відкрити меню"
                 aria-expanded="false"
             >
                 <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -43,17 +40,20 @@ const navItems = [
         </div>
     </div>
 
-    <div id="mobile-menu" class="hidden border-t border-border bg-white md:hidden">
+    <div id="mobile-menu" class="hidden border-t border-border bg-white lg:hidden">
         <nav class="container-main flex flex-col gap-1 px-4 py-4" aria-label="Mobile navigation">
             {navItems.map((item) => (
                 <a
                     href={item.href}
-                    class="mobile-nav-link rounded-md px-3 py-2.5 text-sm font-medium text-card-foreground no-underline transition-colors hover:bg-[#eff4ff] hover:text-[#1a3a6b]"
+                    class="mobile-nav-link rounded-md px-3 py-3 text-base font-medium text-card-foreground no-underline transition-colors hover:bg-[#eff4ff] hover:text-[#1a3a6b]"
                 >
                     {item.label}
                 </a>
             ))}
-            <a href="#contact" class="button-primary mt-2 text-center">Бесплатная консультация</a>
+            <a href="tel:+380442899541" class="rounded-md px-3 py-3 text-base font-bold text-[#1a3a6b] no-underline">
+                +38 (044) 289 95 41
+            </a>
+            <a href="#contact" class="button-primary mt-2 text-center">Безкоштовна консультація</a>
         </nav>
     </div>
 </header>
