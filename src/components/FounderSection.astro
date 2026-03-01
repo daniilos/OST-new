@@ -1,5 +1,9 @@
 ---
+import { translations, type Lang } from '../i18n/translations';
 import FounderIcons from './FounderIcons';
+interface Props { lang?: Lang }
+const { lang = 'uk' } = Astro.props;
+const t = translations[lang].founder;
 ---
 
 <section class="section-padding bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden">
@@ -9,26 +13,21 @@ import FounderIcons from './FounderIcons';
                 <span
                     class="inline-block rounded-full border border-[#2563eb]/20 bg-white px-4 py-1.5 text-sm font-semibold text-[#2563eb] mb-6"
                 >
-                    Засновник OST
+                    {t.badge}
                 </span>
 
                 <div class="space-y-4 text-lg leading-relaxed text-[#475569]">
                     <p>
-                        Компанія ОСТ заснована в 1995 році. Ми стояли біля витоків
-                        комп'ютерної індустрії України — збирали перші ПК 386DX40
-                        з жорсткими дисками на 40 МБ.
+                        {t.paragraphs[0]}
                     </p>
                     <p class="font-semibold text-[#1a3a6b]">
-                        Один з них досі працює в Інституті ядерної фізики.
+                        {t.paragraphs[1]}
                     </p>
                     <p>
-                        З 2002 року повністю перейшли на IT-аутсорсинг. Сьогодні
-                        працюємо з FreeBSD, Linux, Windows — підбираємо оптимальні
-                        рішення під ваш бізнес.
+                        {t.paragraphs[2]}
                     </p>
                     <p>
-                        З 2008 року впроваджуємо міжнародні стандарти якості.
-                        30+ років досвіду — для стабільності вашого IT.
+                        {t.paragraphs[3]}
                     </p>
                 </div>
 
@@ -36,11 +35,10 @@ import FounderIcons from './FounderIcons';
                     class="mt-8 border-l-[8px] border-[#bfdbfe] bg-white/60 backdrop-blur-sm p-5 sm:p-6 md:p-8 rounded-2xl"
                 >
                     <p class="italic text-lg text-[#1a3a6b] leading-relaxed">
-                        «30+ років ми створюємо IT-інфраструктуру, яка працює без збоїв.
-                        Наш досвід — це ваша стабільність.»
+                        {t.quote}
                     </p>
                     <footer class="mt-4">
-                        <span class="font-bold text-[#1a3a6b]">— Степан Орос</span><span class="text-[#475569]">, засновник ОСТ</span>
+                        <span class="font-bold text-[#1a3a6b]">{t.author}</span><span class="text-[#475569]">{t.role}</span>
                     </footer>
                 </blockquote>
             </div>
@@ -55,11 +53,11 @@ import FounderIcons from './FounderIcons';
                             loading="lazy"
                         />
                         <div class="absolute top-4 right-4 z-10 bg-white/90 backdrop-blur-md rounded-xl px-4 py-2.5 shadow-lg">
-                            <span class="block text-2xl font-bold leading-none text-[#1a3a6b]">30+</span>
-                            <span class="block text-sm font-semibold text-[#475569] mt-0.5">років</span>
+                            <span class="block text-2xl font-bold leading-none text-[#1a3a6b]">{t.badgeYears}</span>
+                            <span class="block text-sm font-semibold text-[#475569] mt-0.5">{t.badgeLabel}</span>
                         </div>
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent p-4 pt-10">
-                            <span class="text-white text-sm font-semibold tracking-wide">Сьогодні</span>
+                            <span class="text-white text-sm font-semibold tracking-wide">{t.labelToday}</span>
                         </div>
                     </div>
 
@@ -72,7 +70,7 @@ import FounderIcons from './FounderIcons';
                                 loading="lazy"
                             />
                             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-2 pt-6">
-                                <span class="text-amber-300 text-xs font-bold tracking-wider font-mono">1994</span>
+                                <span class="text-amber-300 text-xs font-bold tracking-wider font-mono">{t.label1994}</span>
                             </div>
                         </div>
                     </div>

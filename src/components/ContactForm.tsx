@@ -1,25 +1,21 @@
-const contactInfo = [
-    { label: 'Телефон', value: '+38 (044) 289 95 41' },
-    { label: 'Email', value: 'info@ost.kiev.ua' },
-    { label: 'Місто', value: 'Київ' },
-    { label: 'Графік роботи', value: 'Пн-Пт: 9:00 - 18:00' }
-];
+import { translations, type Lang } from '../i18n/translations';
 
-export default function ContactForm() {
+export default function ContactForm({ lang = 'uk' }: { lang?: Lang }) {
+    const t = translations[lang].contact;
     return (
         <section id="contact" className="section-padding bg-section-alt">
             <div className="container-main">
                 <div className="mb-12 text-center">
-                    <h2 className="mb-4 text-balance text-[#1a3a6b]">Зв'яжіться з нами</h2>
+                    <h2 className="mb-4 text-balance text-[#1a3a6b]">{t.heading}</h2>
                     <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-                        Залиште заявку, і ми повернемося із пропозицією під ваш бізнес.
+                        {t.subtitle}
                     </p>
                 </div>
 
                 <div className="mx-auto max-w-5xl">
                     <div className="grid gap-8 lg:grid-cols-5">
                         <div className="flex flex-col gap-6 lg:col-span-2">
-                            {contactInfo.map((item) => {
+                            {t.info.map((item) => {
                                 return (
                                     <div key={item.label} className="rounded-2xl border border-[#dbe5ff] bg-white p-4">
                                         <div>
@@ -31,9 +27,9 @@ export default function ContactForm() {
                             })}
 
                             <div className="rounded-2xl border border-[#dbe5ff] bg-[#eff4ff] p-5">
-                                <p className="text-base font-semibold text-[#1a3a6b]">Безкоштовний IT-аудит</p>
+                                <p className="text-base font-semibold text-[#1a3a6b]">{t.auditTitle}</p>
                                 <p className="mt-1 text-sm text-muted-foreground">
-                                    Підготуємо оцінку поточної інфраструктури та план покращень із зрозумілою вартістю обслуговування.
+                                    {t.auditText}
                                 </p>
                             </div>
                         </div>
@@ -41,25 +37,25 @@ export default function ContactForm() {
                         <form
                             className="flex flex-col gap-4 rounded-2xl border border-[#dbe5ff] bg-white p-6 shadow-lg shadow-blue-100/50 transition-shadow duration-300 hover:shadow-xl lg:col-span-3"
                             onSubmit={(e) => e.preventDefault()}
-                            aria-label="Контактна форма"
+                            aria-label={lang === 'en' ? 'Contact form' : 'Контактна форма'}
                         >
                             <div className="grid gap-4 sm:grid-cols-2">
                                 <div>
                                     <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-card-foreground">
-                                        Ім'я
+                                        {t.nameLabel}
                                     </label>
                                     <input
                                         id="name"
                                         name="name"
                                         type="text"
                                         autoComplete="name"
-                                        placeholder="Ваше ім'я"
+                                        placeholder={t.namePlaceholder}
                                         className="w-full rounded-xl border border-[#dbe5ff] bg-background px-4 py-3 text-base text-foreground outline-none transition-all duration-200 placeholder:text-muted-foreground focus:border-[#2563eb] focus:ring-2 focus:ring-[#2563eb]/20"
                                     />
                                 </div>
                                 <div>
                                     <label htmlFor="phone" className="mb-1.5 block text-sm font-medium text-card-foreground">
-                                        Телефон
+                                        {t.phoneLabel}
                                     </label>
                                     <input
                                         id="phone"
@@ -74,7 +70,7 @@ export default function ContactForm() {
                             </div>
                             <div>
                                 <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-card-foreground">
-                                    Email
+                                    {t.emailLabel}
                                 </label>
                                 <input
                                     id="email"
@@ -88,21 +84,21 @@ export default function ContactForm() {
                             </div>
                             <div>
                                 <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-card-foreground">
-                                    Повідомлення
+                                    {t.messageLabel}
                                 </label>
                                 <textarea
                                     id="message"
                                     name="message"
                                     rows={4}
-                                    placeholder="Опишіть ваше завдання або запитання..."
+                                    placeholder={t.messagePlaceholder}
                                     className="w-full resize-none rounded-xl border border-[#dbe5ff] bg-background px-4 py-3 text-base text-foreground outline-none transition-all duration-200 placeholder:text-muted-foreground focus:border-[#2563eb] focus:ring-2 focus:ring-[#2563eb]/20"
                                 ></textarea>
                             </div>
                             <button type="submit" className="button-primary w-full py-3 text-base">
-                                Надіслати заявку
+                                {t.submit}
                             </button>
                             <p className="text-center text-sm text-muted-foreground">
-                                Натискаючи кнопку, ви погоджуєтеся з обробкою персональних даних.
+                                {t.consent}
                             </p>
                         </form>
                     </div>
