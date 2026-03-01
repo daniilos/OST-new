@@ -6,17 +6,20 @@ import interWoff2 from '@fontsource-variable/inter/files/inter-latin-wght-normal
 import TopBar from '../components/TopBar.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import type { Lang } from '../i18n/translations';
 
 interface Props {
     title: string;
     description?: string;
+    lang?: Lang;
 }
 
-const { title, description = 'OST — IT-аутсорсинг та обслуговування комп\'ютерної інфраструктури в Києві з 1995 року.' } = Astro.props;
+const { title, description, lang = 'uk' } = Astro.props;
+const htmlLang = lang === 'en' ? 'en' : 'uk';
 ---
 
 <!doctype html>
-<html lang="uk" class="scroll-smooth">
+<html lang={htmlLang} class="scroll-smooth">
     <head>
         <meta charset="UTF-8" />
         <title>{title}</title>
@@ -25,14 +28,16 @@ const { title, description = 'OST — IT-аутсорсинг та обслуг�
         <meta name="generator" content={Astro.generator} />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="preload" as="font" type="font/woff2" href={interWoff2} crossorigin />
+        <link rel="alternate" hreflang="uk" href="/" />
+        <link rel="alternate" hreflang="en" href="/en/" />
     </head>
     <body class="font-sans antialiased">
-        <TopBar />
-        <SiteHeader />
+        <TopBar lang={lang} />
+        <SiteHeader lang={lang} />
         <main>
             <slot />
         </main>
-        <SiteFooter />
+        <SiteFooter lang={lang} />
 
         <script>
             let countStarted = false;
