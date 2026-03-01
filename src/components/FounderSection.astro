@@ -1,6 +1,9 @@
 ---
+import { Image } from 'astro:assets';
 import { translations, type Lang } from '../i18n/translations';
 import FounderIcons from './FounderIcons';
+import stepanNew from '../assets/images/stepan-newpc1.jpg';
+import stepanOld from '../assets/images/stepanold.jpg';
 interface Props { lang?: Lang }
 const { lang = 'uk' } = Astro.props;
 const t = translations[lang].founder;
@@ -46,11 +49,16 @@ const t = translations[lang].founder;
             <div class="flex justify-center lg:justify-end">
                 <div class="relative pt-4 pb-8 pl-8 sm:pl-16">
                     <div class="relative rounded-3xl shadow-2xl overflow-hidden w-72 sm:w-80 md:w-96 aspect-[4/5] transition-transform duration-500 hover:scale-[1.02]">
-                        <img
-                            src="/images/stepan-newpc1.jpg"
-                            alt="Степан — засновник ОСТ, сьогодні"
+                        <Image
+                            src={stepanNew}
+                            alt={lang === 'en' ? 'Stepan — OST founder, today' : 'Степан — засновник ОСТ, сьогодні'}
+                            width={384}
+                            height={480}
+                            format="webp"
+                            quality={80}
                             class="w-full h-full object-cover"
                             loading="lazy"
+                            decoding="async"
                         />
                         <div class="absolute top-4 right-4 z-10 bg-white/90 backdrop-blur-md rounded-xl px-4 py-2.5 shadow-lg">
                             <span class="block text-2xl font-bold leading-none text-[#1a3a6b]">{t.badgeYears}</span>
@@ -63,11 +71,16 @@ const t = translations[lang].founder;
 
                     <div class="absolute -bottom-2 -left-2 sm:left-0 z-20 transition-all duration-500 hover:scale-105 hover:-rotate-1">
                         <div class="relative rounded-xl overflow-hidden shadow-2xl border-4 border-white w-36 sm:w-44 -rotate-6">
-                            <img
-                                src="/images/stepanold.jpg"
-                                alt="Степан з ПК 386DX40, 1994 рік"
+                            <Image
+                                src={stepanOld}
+                                alt={lang === 'en' ? 'Stepan with 386DX40 PC, 1994' : 'Степан з ПК 386DX40, 1994 рік'}
+                                width={176}
+                                height={235}
+                                format="webp"
+                                quality={75}
                                 class="w-full aspect-[3/4] object-cover object-top"
                                 loading="lazy"
+                                decoding="async"
                             />
                             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-2 pt-6">
                                 <span class="text-amber-300 text-xs font-bold tracking-wider font-mono">{t.label1994}</span>
