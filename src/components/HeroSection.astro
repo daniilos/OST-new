@@ -1,32 +1,30 @@
 ---
+import { translations, type Lang } from '../i18n/translations';
 import HeroIcons from './HeroIcons';
+interface Props { lang?: Lang }
+const { lang = 'uk' } = Astro.props;
+const t = translations[lang].hero;
 ---
 
 <section class="section-padding !pt-24 !pb-16 md:!pt-28 md:!pb-20 lg:!pt-32 bg-white">
     <div class="container-main">
         <div class="grid grid-cols-1 lg:grid-cols-5 items-center gap-12 lg:gap-8">
             <div class="lg:col-span-3 text-center lg:text-left">
-                <span
-                    class="inline-block rounded-full border border-[#2563eb]/20 bg-[#eff4ff] px-4 py-1.5 text-sm font-semibold text-[#2563eb]"
-                >
-                    З 1995 року на ринку IT
+                <span class="inline-block rounded-full border border-[#2563eb]/20 bg-[#eff4ff] px-4 py-1.5 text-sm font-semibold text-[#2563eb]">
+                    {t.badge}
                 </span>
 
                 <h1 class="mt-6 text-balance text-[#1a3a6b]">
-                    IT-аутсорсинг для<br class="hidden sm:inline" /> вашого бізнесу
+                    {t.heading}<br class="hidden sm:inline" /> {t.headingBr}
                 </h1>
 
-                <p
-                    class="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-[#475569] lg:mx-0"
-                >
-                    Беремо на себе все IT — ви займаєтеся бізнесом.
-                    Професійна підтримка та обслуговування
-                    IT-інфраструктури для малого та середнього бізнесу.
+                <p class="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-[#475569] lg:mx-0">
+                    {t.subtitle}
                 </p>
 
                 <div class="mt-10 flex flex-col items-center lg:items-start gap-4 sm:flex-row">
-                    <a href="#contact" class="button-primary px-10 py-4 text-lg">Дізнатися вартість</a>
-                    <a href="#services" class="button-outline px-10 py-4 text-lg">Наші послуги</a>
+                    <a href="#contact" class="button-primary px-10 py-4 text-lg">{t.cta1}</a>
+                    <a href="#services" class="button-outline px-10 py-4 text-lg">{t.cta2}</a>
                 </div>
             </div>
 

@@ -1,37 +1,19 @@
-const testimonials = [
-    {
-        quote: 'З OST ми отримали передбачуваний сервіс і зрозумілі SLA. Кількість простоїв помітно знизилася вже у перші місяці роботи.',
-        name: 'Андрій Коваленко',
-        company: 'ТОВ «ТехноТрейд»',
-        role: 'Генеральний директор'
-    },
-    {
-        quote: 'Ми скоротили витрати на IT та отримали команду, яка глибоко розуміє наші бізнес-процеси. Підтримка завжди на зв\'язку.',
-        name: 'Марина Петренко',
-        company: 'Юридична компанія «Правовест»',
-        role: 'Керівний партнер'
-    },
-    {
-        quote: 'Команда OST стандартизувала інфраструктуру в кількох офісах. У результаті ми швидше масштабуємося і легше впроваджуємо нові сервіси.',
-        name: 'Дмитро Савченко',
-        company: 'Мережа клінік «Здоров\'я»',
-        role: 'IT-директор'
-    }
-];
+import { translations, type Lang } from '../i18n/translations';
 
-export default function Testimonials() {
+export default function Testimonials({ lang = 'uk' }: { lang?: Lang }) {
+    const t = translations[lang].testimonials;
     return (
         <section id="testimonials" className="section-padding bg-background">
             <div className="container-main">
                 <div className="mb-12 text-center">
-                    <h2 className="mb-4 text-balance text-[#1a3a6b]">Відгуки клієнтів</h2>
+                    <h2 className="mb-4 text-balance text-[#1a3a6b]">{t.heading}</h2>
                     <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-                        Компанії обирають OST за стабільність, швидкість реакції та бізнес-орієнтований підхід.
+                        {t.subtitle}
                     </p>
                 </div>
 
                 <div className="grid gap-6 md:grid-cols-3">
-                    {testimonials.map((testimonial) => (
+                    {t.items.map((testimonial) => (
                         <div
                             key={testimonial.name}
                             className="flex flex-col rounded-2xl border border-[#dbe5ff] bg-white p-6 shadow-lg shadow-blue-100/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"

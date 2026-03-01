@@ -1,5 +1,15 @@
 @import 'tailwindcss';
 
+@font-face {
+    font-family: 'Inter Variable';
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono Variable';
+    font-display: swap;
+}
+
 @theme {
     --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';

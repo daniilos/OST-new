@@ -1,42 +1,21 @@
-const reasons = [
-    {
-        title: 'Прозора вартість',
-        description: 'Ви знижуєте витрати на IT та платите за вимірний сервіс без додаткових витрат на штат.'
-    },
-    {
-        title: 'Команда замість одного спеціаліста',
-        description: 'Над вашою інфраструктурою працює група профільних інженерів із розподіленою експертизою.'
-    },
-    {
-        title: 'Швидкі реакції та SLA',
-        description: 'Узгоджені терміни реакції та вирішення завдань фіксуються в договорі й контролюються за метриками.'
-    },
-    {
-        title: 'Профілактика інцидентів',
-        description: 'Моніторимо стан систем та усуваємо проблеми до того, як вони впливають на працівників і клієнтів.'
-    },
-    {
-        title: 'Єдина точка відповідальності',
-        description: 'Один партнер відповідає за весь IT-контур: від робочих місць до серверів, мереж і безпеки.'
-    }
-];
+import { translations, type Lang } from '../i18n/translations';
 
-export default function WhyUs() {
+export default function WhyUs({ lang = 'uk' }: { lang?: Lang }) {
+    const t = translations[lang].whyUs;
     return (
         <section id="why-us" className="section-padding bg-background">
             <div className="container-main">
                 <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
                     <div>
-                        <h2 className="mb-4 text-balance text-[#1a3a6b]">Чому OST</h2>
+                        <h2 className="mb-4 text-balance text-[#1a3a6b]">{t.heading}</h2>
                         <p className="max-w-xl text-lg text-muted-foreground">
-                            Ми вибудовуємо сервіс навколо цілей бізнесу: передбачувані терміни, високий рівень відмовостійкості та
-                            зрозуміла модель обслуговування без зайвої складності.
+                            {t.subtitle}
                         </p>
-                        <a href="#contact" className="button-primary mt-8 inline-flex">Отримати пропозицію</a>
+                        <a href="#contact" className="button-primary mt-8 inline-flex">{t.cta}</a>
                     </div>
 
                     <div className="flex flex-col gap-4">
-                        {reasons.map((reason) => {
+                        {t.reasons.map((reason) => {
                             return (
                                 <div
                                     key={reason.title}
