@@ -4,7 +4,7 @@ const icons = [Server, ShieldCheck, Cloud, Database, Monitor, Wifi];
 
 export default function HeroIcons() {
     return (
-        <div className="grid grid-cols-3 gap-3 sm:gap-4 max-w-[360px] mx-auto lg:ml-auto lg:mr-0">
+        <div className="grid grid-cols-3 gap-3 sm:gap-4 max-w-full sm:max-w-[360px] mx-auto lg:ml-auto lg:mr-0">
             {icons.map((Icon, i) => (
                 <div
                     key={i}

@@ -35,7 +35,7 @@
     }
 
     body {
-        @apply bg-background text-foreground font-sans antialiased leading-[1.7];
+        @apply bg-background text-foreground font-sans antialiased leading-[1.7] overflow-x-hidden;
     }
 
     h1 {
@@ -62,6 +62,7 @@
         @apply bg-[#2563eb] hover:bg-[#1d4ed8] shadow-lg hover:shadow-xl;
         @apply hover:-translate-y-0.5 active:scale-95;
         @apply transition-all duration-300;
+        min-height: 44px;
     }
 
     .button-outline,
@@ -70,10 +71,11 @@
         @apply inline-flex items-center justify-center rounded-xl border-2 border-[#2563eb] bg-white px-6 py-3 text-sm font-semibold text-[#2563eb] no-underline cursor-pointer;
         @apply hover:bg-[#eff4ff] hover:shadow-md active:scale-95;
         @apply transition-all duration-300;
+        min-height: 44px;
     }
 
     .service-card {
-        @apply bg-white p-8 rounded-2xl cursor-pointer;
+        @apply bg-white p-5 sm:p-6 lg:p-8 rounded-2xl cursor-pointer;
         @apply transition-all duration-500 ease-out;
         border: 1px solid #dbe5ff;
         border-left: 4px solid transparent;

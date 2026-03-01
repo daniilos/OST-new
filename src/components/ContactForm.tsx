@@ -41,6 +41,7 @@ export default function ContactForm() {
                         <form
                             className="flex flex-col gap-4 rounded-2xl border border-[#dbe5ff] bg-white p-6 shadow-lg shadow-blue-100/50 transition-shadow duration-300 hover:shadow-xl lg:col-span-3"
                             onSubmit={(e) => e.preventDefault()}
+                            aria-label="Контактна форма"
                         >
                             <div className="grid gap-4 sm:grid-cols-2">
                                 <div>
@@ -49,9 +50,11 @@ export default function ContactForm() {
                                     </label>
                                     <input
                                         id="name"
+                                        name="name"
                                         type="text"
+                                        autoComplete="name"
                                         placeholder="Ваше ім'я"
-                                        className="w-full rounded-xl border border-[#dbe5ff] bg-background px-4 py-3 text-sm text-foreground outline-none transition-all duration-200 placeholder:text-muted-foreground focus:border-[#2563eb] focus:ring-2 focus:ring-[#2563eb]/20"
+                                        className="w-full rounded-xl border border-[#dbe5ff] bg-background px-4 py-3 text-base text-foreground outline-none transition-all duration-200 placeholder:text-muted-foreground focus:border-[#2563eb] focus:ring-2 focus:ring-[#2563eb]/20"
                                     />
                                 </div>
                                 <div>
@@ -60,9 +63,12 @@ export default function ContactForm() {
                                     </label>
                                     <input
                                         id="phone"
+                                        name="phone"
                                         type="tel"
+                                        inputMode="tel"
+                                        autoComplete="tel"
                                         placeholder="+38 (0__) ___-__-__"
-                                        className="w-full rounded-xl border border-[#dbe5ff] bg-background px-4 py-3 text-sm text-foreground outline-none transition-all duration-200 placeholder:text-muted-foreground focus:border-[#2563eb] focus:ring-2 focus:ring-[#2563eb]/20"
+                                        className="w-full rounded-xl border border-[#dbe5ff] bg-background px-4 py-3 text-base text-foreground outline-none transition-all duration-200 placeholder:text-muted-foreground focus:border-[#2563eb] focus:ring-2 focus:ring-[#2563eb]/20"
                                     />
                                 </div>
                             </div>
@@ -72,9 +78,12 @@ export default function ContactForm() {
                                 </label>
                                 <input
                                     id="email"
+                                    name="email"
                                     type="email"
+                                    inputMode="email"
+                                    autoComplete="email"
                                     placeholder="your@email.com"
-                                    className="w-full rounded-xl border border-[#dbe5ff] bg-background px-4 py-3 text-sm text-foreground outline-none transition-all duration-200 placeholder:text-muted-foreground focus:border-[#2563eb] focus:ring-2 focus:ring-[#2563eb]/20"
+                                    className="w-full rounded-xl border border-[#dbe5ff] bg-background px-4 py-3 text-base text-foreground outline-none transition-all duration-200 placeholder:text-muted-foreground focus:border-[#2563eb] focus:ring-2 focus:ring-[#2563eb]/20"
                                 />
                             </div>
                             <div>
@@ -83,9 +92,10 @@ export default function ContactForm() {
                                 </label>
                                 <textarea
                                     id="message"
+                                    name="message"
                                     rows={4}
                                     placeholder="Опишіть ваше завдання або запитання..."
-                                    className="w-full resize-none rounded-xl border border-[#dbe5ff] bg-background px-4 py-3 text-sm text-foreground outline-none transition-all duration-200 placeholder:text-muted-foreground focus:border-[#2563eb] focus:ring-2 focus:ring-[#2563eb]/20"
+                                    className="w-full resize-none rounded-xl border border-[#dbe5ff] bg-background px-4 py-3 text-base text-foreground outline-none transition-all duration-200 placeholder:text-muted-foreground focus:border-[#2563eb] focus:ring-2 focus:ring-[#2563eb]/20"
                                 ></textarea>
                             </div>
                             <button type="submit" className="button-primary w-full py-3 text-base">
