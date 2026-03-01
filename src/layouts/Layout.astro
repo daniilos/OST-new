@@ -75,6 +75,12 @@ const { title, description = 'OST — IT-аутсорсинг та обслуг�
                 { threshold: 0.08 }
             );
             document.querySelectorAll('.scroll-reveal').forEach((el) => revealObserver.observe(el));
+
+            // Keep contact form UI-only without hydrating React.
+            const contactForm = document.querySelector<HTMLFormElement>('#contact-form');
+            contactForm?.addEventListener('submit', (event) => {
+                event.preventDefault();
+            });
         </script>
     </body>
 </html>
